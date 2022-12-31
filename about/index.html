@@ -50,7 +50,8 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -445,10 +446,15 @@
 
 
 
+<div class="statis">
+    <span class="count"><a href="/categories">1</a></span>
+    <span class="name">分类</span>
+</div>
+
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">1</a></span>
+    <span class="count"><a href="/tags">4</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -470,10 +476,15 @@
 
 
 
+<div class="statis">
+    <span class="count"><a href="/categories">1</a></span>
+    <span class="name">分类</span>
+</div>
+
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">1</a></span>
+    <span class="count"><a href="/tags">4</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -667,7 +678,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [],
+                data: [{"name":"前端","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -691,7 +702,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["数组 算法"]
+                data: ["介绍","数组","算法","去重"]
             }
         ],
         yAxis: [
@@ -704,7 +715,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [1],
+                data: [1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -837,8 +848,26 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/%E6%95%B0%E7%BB%84-%E7%AE%97%E6%B3%95/">
-                <span class="chip center-align waves-effect waves-light chip-default">数组 算法</span>
+            <a href="/tags/%E4%BB%8B%E7%BB%8D/">
+                <span class="chip center-align waves-effect waves-light chip-default">介绍</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%95%B0%E7%BB%84/">
+                <span class="chip center-align waves-effect waves-light chip-default">数组</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                <span class="chip center-align waves-effect waves-light chip-default">算法</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%8E%BB%E9%87%8D/">
+                <span class="chip center-align waves-effect waves-light chip-default">去重</span>
             </a>
             
             
@@ -898,7 +927,7 @@
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="4965675848"
+                   id="503838841"
                    fixed='true'
                    autoplay='false'
                    theme='#42b983'
@@ -927,10 +956,8 @@
             <a href="/about" target="_blank">liwenka1</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            <br>
             
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.2k</span>
+            <br>
             
             
             
@@ -1142,6 +1169,8 @@ $(function () {
 
     
 
+    
+    
     
 
     <!-- 雪花特效 -->

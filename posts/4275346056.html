@@ -7,7 +7,9 @@
     <meta name="keywords" content="两个数组条件去重, 自由">
     <meta name="description" content="需求说明
 最近工作中遇到了一个数组去重相关的问题，大概场景是这样的
-123456789有两个数组为 arrOen为oldlList:[&amp;#x27;1&amp;#x27;, &amp;#x27;2&amp;#x27;, &amp;#x27;3&amp;#x27;, &amp;#x27;4&amp;">
+
+有两个数组为 arrOen为oldlList:[‘1’, ‘2’, ‘3’, ‘4’, ‘5’]中随机项，arrTwo为oldlList中随机项加’_’再加随机数字例如
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -52,7 +54,8 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -410,14 +413,31 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E7%BB%84-%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">数组 算法</span>
+                            <a href="/tags/%E6%95%B0%E7%BB%84/">
+                                <span class="chip bg-color">数组</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8E%BB%E9%87%8D/">
+                                <span class="chip bg-color">去重</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -431,32 +451,12 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-29
-                </div>
+
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    910
-                </div>
-                
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -469,25 +469,123 @@
             <div id="articleContent">
                 <h3 id="需求说明"><a href="#需求说明" class="headerlink" title="需求说明"></a>需求说明</h3><hr>
 <p>最近工作中遇到了一个数组去重相关的问题，大概场景是这样的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">有两个数组为 arrOen为oldlList:[&#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;4&#x27;, &#x27;5&#x27;]中随机项，arrTwo为oldlList中随机项加&#x27;_&#x27;再加随机数字</span><br><span class="line">例如</span><br><span class="line">list:[&#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;4&#x27;, &#x27;5&#x27;]</span><br><span class="line">arrOen:[&#x27;1&#x27;,&#x27;3&#x27;]</span><br><span class="line">arrTwo:[&#x27;5_2323&#x27;,&#x27;3_98&#x27;,&#x27;1_234&#x27;,&#x27;2_123&#x27;,&#x27;1_23&#x27;,&#x27;3_123&#x27;,&#x27;4_12&#x27;,&#x27;4_124&#x27;]</span><br><span class="line"></span><br><span class="line">需求为将arrTwo中的每一项的第一个字符不存在于arrOne的元素从arrTwo中删除</span><br><span class="line">例如上例结果为</span><br><span class="line">arrTwo:[&#x27;1_234&#x27;,&#x27;1_23&#x27;,&#x27;3_123&#x27;]</span><br></pre></td></tr></table></figure>
+<hr>
+<p>有两个数组为 arrOen为oldlList:[‘1’, ‘2’, ‘3’, ‘4’, ‘5’]中随机项，arrTwo为oldlList中随机项加’_’再加随机数字<br>例如</p>
+<pre><code>list:[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]
+arrOen:[&#39;1&#39;,&#39;3&#39;]
+arrTwo:[&#39;5_2323&#39;,&#39;3_98&#39;,&#39;1_234&#39;,&#39;2_123&#39;,&#39;1_23&#39;,&#39;3_123&#39;,&#39;4_12&#39;,&#39;4_124&#39;]
+</code></pre>
+<p>需求为将arrTwo中的每一项的第一个字符不存在于arrOne的元素从arrTwo中删除<br>例如上例结果为</p>
+<pre><code>arrTwo:[&#39;1_234&#39;,&#39;1_23&#39;,&#39;3_123&#39;]
+</code></pre>
 <hr>
 <h3 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h3><hr>
 <p>第一步，将arrOne同目标list进行对比取反，即得到newArrOne:[‘2’,’4’,’5’]</p>
 <p>第二步，对得到的newArrOne进行遍历，内部则对arrTwo进行while循环处理，找出arrTwo中的第一个字符存在于arrOne的元素，将此元素删除</p>
 <hr>
 <h3 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h3><hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">let list = [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;];</span><br><span class="line">let arrOen = [&quot;1&quot;, &quot;3&quot;];</span><br><span class="line">let arrTwo = [&#x27;5_2323&#x27;,&#x27;3_98&#x27;,&#x27;1_234&#x27;,&#x27;2_123&#x27;,&#x27;1_23&#x27;,&#x27;3_123&#x27;,&#x27;4_12&#x27;,&#x27;4_124&#x27;]</span><br><span class="line">let newArrOne = [];</span><br><span class="line">list.forEach((a) =&gt; &#123;</span><br><span class="line">  let c = arrOen.findIndex((b) =&gt; a === b);</span><br><span class="line">  if (c &gt; -1) delete arrOen[c];</span><br><span class="line">  else newArrOne.push(a);</span><br><span class="line">&#125;);</span><br><span class="line">newArrOne.forEach((item) =&gt; &#123;</span><br><span class="line">  let i = arrTwo.length;</span><br><span class="line">  while (i--) &#123;</span><br><span class="line">    const ele = arrTwo[i];</span><br><span class="line">    if (item === ele.slice(0, 1)) &#123;</span><br><span class="line">      let index = arrTwo.indexOf(ele);</span><br><span class="line">      arrTwo.splice(index, 1);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(arrTwo);</span><br></pre></td></tr></table></figure>
+<pre><code>let list = [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;];
+let arrOen = [&quot;1&quot;, &quot;3&quot;];
+let arrTwo = [&#39;5_2323&#39;,&#39;3_98&#39;,&#39;1_234&#39;,&#39;2_123&#39;,&#39;1_23&#39;,&#39;3_123&#39;,&#39;4_12&#39;,&#39;4_124&#39;]
+let newArrOne = [];
+list.forEach((a) =&gt; &#123;
+  let c = arrOen.findIndex((b) =&gt; a === b);
+  if (c &gt; -1) delete arrOen[c];
+  else newArrOne.push(a);
+&#125;);
+newArrOne.forEach((item) =&gt; &#123;
+  let i = arrTwo.length;
+  while (i--) &#123;
+    const ele = arrTwo[i];
+    if (item === ele.slice(0, 1)) &#123;
+      let index = arrTwo.indexOf(ele);
+      arrTwo.splice(index, 1);
+    &#125;
+  &#125;
+&#125;);
+console.log(arrTwo);
+</code></pre>
 <hr>
 <h3 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h3><hr>
-<p>####findIndex()方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">定义和用法</span><br><span class="line">findIndex() 方法返回传入一个测试条件（函数）符合条件的数组第一个元素位置。</span><br><span class="line"></span><br><span class="line">findIndex() 方法为数组中的每个元素都调用一次函数执行：</span><br><span class="line"></span><br><span class="line">当数组中的元素在测试条件时返回 true 时, findIndex() 返回符合条件的元素的索引位置，之后的值不会再调用执行函数。</span><br><span class="line">如果没有符合条件的元素返回 -1</span><br><span class="line">注意: findIndex() 对于空数组，函数是不会执行的。</span><br><span class="line"></span><br><span class="line">注意: findIndex() 并没有改变数组的原始值。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">获取数组中年龄大于等于 18 的第一个元素索引位置</span><br><span class="line">var ages = [3, 10, 18, 20];</span><br><span class="line"> </span><br><span class="line">function checkAdult(age) &#123;</span><br><span class="line">    return age &gt;= 18;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function myFunction() &#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML = ages.findIndex(checkAdult);</span><br><span class="line">&#125;</span><br><span class="line">fruits 输出结果：</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">因此我们利用findIndex()来对arrOne取反</span><br><span class="line">list.forEach((a) =&gt; &#123;</span><br><span class="line">  let c = arrOen.findIndex((b) =&gt; a === b);</span><br><span class="line">  if (c &gt; -1) delete arrOen[c];</span><br><span class="line">  else newArrOne.push(a);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>####while循环</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">利用while循环主要解决JS遍历数组，删除数组元素时，怎么删都会漏掉一个的问题</span><br><span class="line">例如</span><br><span class="line">var arr = [1, 2, 2, 3, 4, 5];</span><br><span class="line">    var i = arr.length;</span><br><span class="line">    while(i--) &#123;</span><br><span class="line">        console.log(i + &#x27; = &#x27; + arr[i]);</span><br><span class="line">        if(arr[i] === 2) &#123;</span><br><span class="line">            arr.splice(i, 1);</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">    console.log(arr);</span><br><span class="line"></span><br><span class="line">因此，在最后的循环去重的内部循环操作中选择了while循环</span><br><span class="line">newArrOne.forEach((item) =&gt; &#123;</span><br><span class="line">  let i = arrTwo.length;</span><br><span class="line">  while (i--) &#123;</span><br><span class="line">    const ele = arrTwo[i];</span><br><span class="line">    if (item === ele.slice(0, 1)) &#123;</span><br><span class="line">      let index = arrTwo.indexOf(ele);</span><br><span class="line">      arrTwo.splice(index, 1);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="findIndex-方法"><a href="#findIndex-方法" class="headerlink" title="findIndex()方法"></a>findIndex()方法</h4><pre><code>定义和用法
+findIndex() 方法返回传入一个测试条件（函数）符合条件的数组第一个元素位置。
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">其他解决方法</span><br><span class="line">方法1：实时调整数组中元素的下标对应关系</span><br><span class="line">var arr = [1, 2, 2, 3, 4, 5];</span><br><span class="line">    for (var i = 0; i &lt; arr.length; i++)&#123;</span><br><span class="line">        // 打印数组中的情况，便于跟踪数组中数据的变化</span><br><span class="line">        console.log(i + &#x27; = &#x27; + arr[i]);</span><br><span class="line">        // 删除掉所有为2的元素</span><br><span class="line">        if(arr[i] === 2) &#123;</span><br><span class="line">            arr.splice(i--, 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(arr);</span><br><span class="line">方法2：从后往前遍历数组元素</span><br><span class="line">var arr = [1, 2, 2, 3, 4, 5];</span><br><span class="line">    for (var i = arr.length - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">        // 打印数组中的情况，便于跟踪数组中数据的变化</span><br><span class="line">        console.log(i + &#x27; = &#x27; + arr[i]);</span><br><span class="line">        // 删除掉所有为2的元素</span><br><span class="line">        if(arr[i] === 2) &#123;</span><br><span class="line">            arr.splice(i, 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(arr);</span><br></pre></td></tr></table></figure>
+findIndex() 方法为数组中的每个元素都调用一次函数执行：
 
+当数组中的元素在测试条件时返回 true 时, findIndex() 返回符合条件的元素的索引位置，之后的值不会再调用执行函数。
+如果没有符合条件的元素返回 -1
+注意: findIndex() 对于空数组，函数是不会执行的。
+
+注意: findIndex() 并没有改变数组的原始值。
+</code></pre>
+<pre><code>获取数组中年龄大于等于 18 的第一个元素索引位置
+var ages = [3, 10, 18, 20];
+ 
+function checkAdult(age) &#123;
+    return age &gt;= 18;
+&#125;
+ 
+function myFunction() &#123;
+    document.getElementById(&quot;demo&quot;).innerHTML = ages.findIndex(checkAdult);
+&#125;
+fruits 输出结果：
+2
+</code></pre>
+<pre><code>因此我们利用findIndex()来对arrOne取反
+list.forEach((a) =&gt; &#123;
+  let c = arrOen.findIndex((b) =&gt; a === b);
+  if (c &gt; -1) delete arrOen[c];
+  else newArrOne.push(a);
+&#125;);
+</code></pre>
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><pre><code>利用while循环主要解决JS遍历数组，删除数组元素时，怎么删都会漏掉一个的问题
+例如
+var arr = [1, 2, 2, 3, 4, 5];
+    var i = arr.length;
+    while(i--) &#123;
+        console.log(i + &#39; = &#39; + arr[i]);
+        if(arr[i] === 2) &#123;
+            arr.splice(i, 1);
+        &#125;
+     &#125;
+    console.log(arr);
+
+因此，在最后的循环去重的内部循环操作中选择了while循环
+newArrOne.forEach((item) =&gt; &#123;
+  let i = arrTwo.length;
+  while (i--) &#123;
+    const ele = arrTwo[i];
+    if (item === ele.slice(0, 1)) &#123;
+      let index = arrTwo.indexOf(ele);
+      arrTwo.splice(index, 1);
+    &#125;
+  &#125;
+&#125;);
+</code></pre>
+<pre><code>其他解决方法
+方法1：实时调整数组中元素的下标对应关系
+var arr = [1, 2, 2, 3, 4, 5];
+    for (var i = 0; i &lt; arr.length; i++)&#123;
+        // 打印数组中的情况，便于跟踪数组中数据的变化
+        console.log(i + &#39; = &#39; + arr[i]);
+        // 删除掉所有为2的元素
+        if(arr[i] === 2) &#123;
+            arr.splice(i--, 1);
+        &#125;
+    &#125;
+    console.log(arr);
+方法2：从后往前遍历数组元素
+var arr = [1, 2, 2, 3, 4, 5];
+    for (var i = arr.length - 1; i &gt;= 0; i--) &#123;
+        // 打印数组中的情况，便于跟踪数组中数据的变化
+        console.log(i + &#39; = &#39; + arr[i]);
+        // 删除掉所有为2的元素
+        if(arr[i] === 2) &#123;
+            arr.splice(i, 1);
+        &#125;
+    &#125;
+    console.log(arr);
+</code></pre>
 <hr>
 
                 
@@ -515,7 +613,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://true-kjoker.github.io/2022/12/29/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E6%9D%A1%E4%BB%B6%E5%8E%BB%E9%87%8D/">https://true-kjoker.github.io/2022/12/29/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E6%9D%A1%E4%BB%B6%E5%8E%BB%E9%87%8D/</a>
+                    <a href="https://true-kjoker.github.io/posts/4275346056.html">https://true-kjoker.github.io/posts/4275346056.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -553,8 +651,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E7%BB%84-%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">数组 算法</span>
+                                <a href="/tags/%E6%95%B0%E7%BB%84/">
+                                    <span class="chip bg-color">数组</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8E%BB%E9%87%8D/">
+                                    <span class="chip bg-color">去重</span>
                                 </a>
                             
                         </div>
@@ -605,7 +711,7 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/12/29/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E6%9D%A1%E4%BB%B6%E5%8E%BB%E9%87%8D/">
+                <a href="/posts/4275346056.html">
                     <div class="card-image">
                         
                         
@@ -626,8 +732,12 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            liwenka1
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -636,8 +746,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E7%BB%84-%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数组 算法</span>
+                    <a href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="chip bg-color">数组</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8E%BB%E9%87%8D/">
+                        <span class="chip bg-color">去重</span>
                     </a>
                     
                 </div>
@@ -651,13 +769,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/11/07/Blog_introduction/">
+                <a href="/posts/486220008.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Blog introduction">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="博客介绍">
                         
-                        <span class="card-title">Blog introduction</span>
+                        <span class="card-title">博客介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -677,6 +795,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BB%8B%E7%BB%8D/">
+                        <span class="chip bg-color">介绍</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -836,7 +962,7 @@
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="4965675848"
+                   id="503838841"
                    fixed='true'
                    autoplay='false'
                    theme='#42b983'
@@ -865,10 +991,8 @@
             <a href="/about" target="_blank">liwenka1</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            <br>
             
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.2k</span>
+            <br>
             
             
             
@@ -1080,6 +1204,8 @@ $(function () {
 
     
 
+    
+    
     
 
     <!-- 雪花特效 -->

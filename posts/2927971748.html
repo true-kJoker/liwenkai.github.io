@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="musics, 自由">
-    <meta name="description" content="自由">
+    <meta name="keywords" content="理解面向对象和面向过程, 自由">
+    <meta name="description" content="面向对象基本概念
+面向对象 ( Object Oriented )就是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描述某个事物在整个解决问题的步骤中的行为。简写为：OOP
+
+面向过程基本概念
+面向过程(Proc">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>musics | 自由</title>
+    <title>理解面向对象和面向过程 | 自由</title>
     <link rel="icon" type="image/png" href="/medias/international.png">
     
 
@@ -376,174 +380,487 @@
 
 </header>
 
-    <style type="text/css">
-    /* don't remove. */
-    .about-cover {
-        height: 75vh;
-    }
-</style>
-
-<div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                与君共勉
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "从来没有真正的绝境, 只有心灵的迷途",
-                            
-                                "Never really desperate, only the lost of the soul",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-
-
-    </div>
-</div>
-
-<main class="content">
-    <div id="aboutme" class="container about-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="music-player">
-                    
-                        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
     
-</style>
-<div class="music-player">
-    
-        <div class="title center-align">
-            <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
-        </div>
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="tencent"
-                   type="playlist"
-                   id="1776127550"
-                   fixed='false'
-                   autoplay='true'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   listMaxHeight='525px'
-                   list-folded='false'
-        >
-        </meting-js>
-    </div>
-</div>
-
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
 
 
-                        <style>
-                        .bubbles > .particle {
-                            /*初始透明度为0*/
-                            opacity: 0;
-                            position: absolute;
-                            /*初始颜色为荧光色，透明度为0.7*/
-                            background-color: rgba(128,255,0,0.7);
-                            /*使用bubbles动画，持续时间18秒，缓慢进入，无限循环*/
-                            animation: bubbles 18s ease-in infinite;
-                            border-radius: 100%;
-                        }
-                        /*css keyframes 动画*/
-                        @keyframes bubbles {
-                            0% {
-                                opacity: 0;
-                            }
-                            5% {
-                                opacity: 1;
-                                transform: translate(0, -20%);
-                            }
-                            /*这里-8000%表示是气泡的8000%*/
-                            100% {
-                                opacity: 0;
-                                transform: translate(0, -8000%);
-                            }
-                        }
-                        </style>
-                        <!-- 这里让元素宽度100%（和页面等宽） -->
-                        <div style="width: 100%; height: 100%; position: relative; bottom: 0px;" class="particletext bubbles">
-
-
-
-                        </div>
-                        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-                        <script>
-                          function bubbles() {
-                             $.each($(".particletext.bubbles"), function(){
-                                var bubblecount = ($(this).width()/50)*10;
-                                for(var i = 0; i <= bubblecount; i++) {
-                                   var size = ($.rnd(40,80)/10);
-                                   //这里的animation-delay很重要，关系到你的特效是否看上去是连续无断层的，上一步中css是18秒，所以这一步中延迟时间就设置成$.rnd(0,180)/10)
-                                   $(this).append('<span class="particle" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,180)/10) + 's;"></span>');
-                                }
-                             });
-                          }
-                          jQuery.rnd = function(m,n) {
-                              m = parseInt(m);
-                              n = parseInt(n);
-                              return Math.floor( Math.random() * (n - m + 1) ) + m;
-                          }
-                          bubbles();
-                        </script>
-                        
-                    
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">理解面向对象和面向过程</h1>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                                <span class="chip bg-color">面向对象</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/">
+                                <span class="chip bg-color">面向过程</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" class="post-category">
+                                编程思想
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-01-03
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="面向对象基本概念"><a href="#面向对象基本概念" class="headerlink" title="面向对象基本概念"></a>面向对象基本概念</h3><hr>
+<p>面向对象 ( Object Oriented )就是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描述某个事物在整个解决问题的步骤中的行为。简写为：OOP</p>
+<hr>
+<h3 id="面向过程基本概念"><a href="#面向过程基本概念" class="headerlink" title="面向过程基本概念"></a>面向过程基本概念</h3><hr>
+<p>面向过程(Procedure Oriented)就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。简写为：POP</p>
+<hr>
+<h3 id="举例理解"><a href="#举例理解" class="headerlink" title="举例理解"></a>举例理解</h3><h4 id="大象放冰箱"><a href="#大象放冰箱" class="headerlink" title="大象放冰箱"></a>大象放冰箱</h4><hr>
+<p>OOP:<br>1.创建一个对象为冰箱，并且给予冰箱开门(open)和关门(close)以及放入(push)的属性<br>2.创建一个对象为大象<br>3.冰箱.open()<br>  冰箱.push(大象)<br>  冰箱.close()<br>小结:以冰箱为主视角来进行相应的操作</p>
+<p>POP:<br>1.找个冰箱把冰箱门打开<br>2.找个大象丢进冰箱里面<br>3.把冰箱门给关上<br>小结:并没有固定的主视角，在于我们需要什么就去找什么，或者说需要干什么就去干什么</p>
+<hr>
+<h4 id="五子棋"><a href="#五子棋" class="headerlink" title="五子棋"></a>五子棋</h4><p>OOP:<br>1.创建俩个对象，玩家A和玩家B<br>2.创建一个棋盘，绘制画面<br>3.创建系统规则，判断输赢<br>4.第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。</p>
+<p>POP:<br>1.开始游戏<br>2.进行下棋<br>3.绘制画面<br>4.判断输赢<br>5.返回步骤2或结束游戏<br>6.输出游戏结果</p>
+<hr>
+<h3 id="面向对象和面向过程优劣分析"><a href="#面向对象和面向过程优劣分析" class="headerlink" title="面向对象和面向过程优劣分析"></a>面向对象和面向过程优劣分析</h3><h4 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h4><hr>
+<p>优点：性能比面向对象好，因为类调用时需要实例化，开销比较大，比较消耗资源</p>
+<p>缺点：不易维护、不易复用、不易扩展</p>
+<hr>
+<h4 id="面向对象："><a href="#面向对象：" class="headerlink" title="面向对象："></a>面向对象：</h4><hr>
+<p>优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的系统，使系统 更加灵活、更加易于维护</p>
+<p>缺点：性能比面向过程差</p>
+<hr>
+<h3 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a>面向对象的三大特性</h3><hr>
+<p>1、封装</p>
+<p>隐藏对象的属性和实现细节，仅对外提供公共访问方式，将变化隔离，便于使用，提高复用性和安全性。</p>
+<p>2、继承</p>
+<p>提高代码复用性；继承是多态的前提。</p>
+<p>3、多态</p>
+<p>父类或接口定义的引用变量可以指向子类或具体实现类的实例对象。提高了程序的拓展性。</p>
+<hr>
+<h3 id="代码举例"><a href="#代码举例" class="headerlink" title="代码举例"></a>代码举例</h3><pre><code>const arr1 = [1, 2, 2, 3, 4, 4, 5, 6]; // 去重
+const arr2 = [1, 3, 5, 6]; // 翻转
+// OOP
+const obj = &#123;
+  fnFilter: (arr) =&gt; &#123;
+    return arr.filter((item, i) =&gt; &#123;
+      return arr.indexOf(item) === i;
+    &#125;);
+  &#125;,
+  fnReverse: (arr) =&gt; &#123;
+    return arr.reverse();
+  &#125;,
+&#125;;
+let OOP1 = obj.fnFilter(arr1);
+let OOP2 = obj.fnReverse(arr2);
+console.log(OOP1, OOP2); // [ 1, 2, 3, 4, 5, 6 ] [ 6, 5, 3, 1 ]
+// POP
+const fnFilter = (arr) =&gt; &#123;
+  return arr.filter((item, i) =&gt; &#123;
+    return arr.indexOf(item) === i;
+  &#125;);
+&#125;;
+let POP1 = fnFilter(arr1);
+const fnReverse = (arr) =&gt; &#123;
+  return arr.reverse();
+&#125;;
+let POP2 = fnReverse(arr2);
+console.log(POP1, POP2);// [ 1, 2, 3, 4, 5, 6 ] [ 6, 5, 3, 1 ]
+</code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">liwenka1</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://true-kjoker.github.io/posts/2927971748.html">https://true-kjoker.github.io/posts/2927971748.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">liwenka1</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                                    <span class="chip bg-color">面向对象</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/">
+                                    <span class="chip bg-color">面向过程</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/2927971748.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="理解面向对象和面向过程">
+                        
+                        <span class="card-title">理解面向对象和面向过程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" class="post-category">
+                                    编程思想
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                        <span class="chip bg-color">面向对象</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/">
+                        <span class="chip bg-color">面向过程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/4275346056.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="两个数组条件去重">
+                        
+                        <span class="card-title">两个数组条件去重</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="chip bg-color">数组</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8E%BB%E9%87%8D/">
+                        <span class="chip bg-color">去重</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
 </main>
+
+
+
 
     <footer class="page-footer bg-color">
     

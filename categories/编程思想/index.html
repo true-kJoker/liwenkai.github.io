@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="musics, 自由">
+    <meta name="keywords" content="分类: 编程思想, 自由">
     <meta name="description" content="自由">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>musics | 自由</title>
+    <title>分类: 编程思想 | 自由</title>
     <link rel="icon" type="image/png" href="/medias/international.png">
     
 
@@ -376,14 +376,7 @@
 
 </header>
 
-    <style type="text/css">
-    /* don't remove. */
-    .about-cover {
-        height: 75vh;
-    }
-</style>
-
-<div class="bg-cover pd-header about-cover">
+    <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -432,118 +425,108 @@
 </div>
 
 <main class="content">
-    <div id="aboutme" class="container about-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="music-player">
-                    
-                        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        font-size: 15px;
-        color: #42b983;
-    }
 
     
-</style>
-<div class="music-player">
-    
-        <div class="title center-align">
-            <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
+
+<div id="category-cloud" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
+            </div>
+            <div class="tag-chips">
+                
+                
+                
+                <a href="/categories/%E5%89%8D%E7%AB%AF/" title="前端: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">前端
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" title="编程思想: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #F5EEF8;">编程思想
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+            </div>
         </div>
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="tencent"
-                   type="playlist"
-                   id="1776127550"
-                   fixed='false'
-                   autoplay='true'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   listMaxHeight='525px'
-                   list-folded='false'
-        >
-        </meting-js>
     </div>
 </div>
 
 
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
 
-
-
-                        <style>
-                        .bubbles > .particle {
-                            /*初始透明度为0*/
-                            opacity: 0;
-                            position: absolute;
-                            /*初始颜色为荧光色，透明度为0.7*/
-                            background-color: rgba(128,255,0,0.7);
-                            /*使用bubbles动画，持续时间18秒，缓慢进入，无限循环*/
-                            animation: bubbles 18s ease-in infinite;
-                            border-radius: 100%;
-                        }
-                        /*css keyframes 动画*/
-                        @keyframes bubbles {
-                            0% {
-                                opacity: 0;
-                            }
-                            5% {
-                                opacity: 1;
-                                transform: translate(0, -20%);
-                            }
-                            /*这里-8000%表示是气泡的8000%*/
-                            100% {
-                                opacity: 0;
-                                transform: translate(0, -8000%);
-                            }
-                        }
-                        </style>
-                        <!-- 这里让元素宽度100%（和页面等宽） -->
-                        <div style="width: 100%; height: 100%; position: relative; bottom: 0px;" class="particletext bubbles">
-
-
-
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/2927971748.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="理解面向对象和面向过程">
+                            
+                            <span class="card-title">理解面向对象和面向过程</span>
                         </div>
-                        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-                        <script>
-                          function bubbles() {
-                             $.each($(".particletext.bubbles"), function(){
-                                var bubblecount = ($(this).width()/50)*10;
-                                for(var i = 0; i <= bubblecount; i++) {
-                                   var size = ($.rnd(40,80)/10);
-                                   //这里的animation-delay很重要，关系到你的特效是否看上去是连续无断层的，上一步中css是18秒，所以这一步中延迟时间就设置成$.rnd(0,180)/10)
-                                   $(this).append('<span class="particle" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,180)/10) + 's;"></span>');
-                                }
-                             });
-                          }
-                          jQuery.rnd = function(m,n) {
-                              m = parseInt(m);
-                              n = parseInt(n);
-                              return Math.floor( Math.random() * (n - m + 1) ) + m;
-                          }
-                          bubbles();
-                        </script>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                面向对象基本概念
+面向对象 ( Object Oriented )就是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描述某个事物在整个解决问题的步骤中的行为。简写为：OOP
+
+面向过程基本概念
+面向过程(Proc
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-03
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" class="post-category">
+                                    编程思想
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
                         
+                        <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                            <span class="chip bg-color">面向对象</span>
+                        </a>
+                        
+                        <a href="/tags/%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/">
+                            <span class="chip bg-color">面向过程</span>
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
+            
         </div>
-    </div>
+    </article>
 </main>
+
+
+
 
     <footer class="page-footer bg-color">
     

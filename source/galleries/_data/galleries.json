@@ -1,11 +1,14 @@
 [
-    {
+  {
     "name": "好看壁纸",
     "cover": "/medias/好看壁纸/00.jpg",
     "description": "好看壁纸",
-    "photos": [
-        "/medias/好看壁纸/00.jpg"
-      ]
-    }
-  ]
- 
+    "photos": ["/medias/好看壁纸/00.jpg"]
+  },
+  {
+    "name": "动漫人物",
+    "cover": "/medias/动漫人物/Jolyne.jpg",
+    "description": "动漫人物",
+    "photos": ["/medias/动漫人物/Jolyne.jpg"]
+  }
+]

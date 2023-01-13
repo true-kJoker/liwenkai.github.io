@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Excel表列</title>
+    <url>/posts/2506288334.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Excel表列名称和序号的相互转换"><a href="#Excel表列名称和序号的相互转换" class="headerlink" title="Excel表列名称和序号的相互转换"></a>Excel表列名称和序号的相互转换</h3><hr>
+<h4 id="Excel表列名称"><a href="#Excel表列名称" class="headerlink" title="Excel表列名称"></a>Excel表列名称</h4><p>给你一个整数 columnNumber ，返回它在 Excel 表中相对应的列名称。<br>例如：</p>
+<pre><code>A -&gt; 1
+B -&gt; 2
+C -&gt; 3
+...
+Z -&gt; 26
+AA -&gt; 27
+AB -&gt; 28 
+...
+</code></pre>
+<p>示例 1：</p>
+<pre><code>输入：columnNumber = 1
+输出：&quot;A&quot;
+</code></pre>
+<p>示例 2：</p>
+<pre><code>输入：columnNumber = 28
+输出：&quot;AB&quot;
+</code></pre>
+<p>示例 3：</p>
+<pre><code>输入：columnNumber = 701
+输出：&quot;ZY&quot;
+</code></pre>
+<p>示例 4：</p>
+<pre><code>输入：columnNumber = 2147483647
+输出：&quot;FXSHRXW&quot;
+</code></pre>
+<p>提示：</p>
+<ul>
+<li>1 &lt;&#x3D; columnNumber &lt;&#x3D; 231 - 1</li>
+</ul>
+<h5 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h5><hr>
+<p>首先看清楚问题的本质在于26进制的转换，对给定的columnNumber进行求余找出对应的字母，但值得注意的是此时’A’对应的是0，因此是[0,25]的26进制，所以只要在处理每一位的时候进行减 1，就可以按照正常的 26 进制来处理</p>
+<hr>
+<h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><pre><code>/**
+ * @param &#123;number&#125; columnNumber
+ * @return &#123;string&#125;
+ */
+var convertToTitle = function (columnNumber) &#123;
+    let res = []
+    while (columnNumber--) &#123;
+        res.push(String.fromCharCode(columnNumber % 26 + &#39;A&#39;.charCodeAt()))
+        columnNumber = Math.floor(columnNumber / 26)
+    &#125;
+    return res.reverse().join(&#39;&#39;)
+&#125;;
+</code></pre>
+<hr>
+<h4 id="Excel表列序号"><a href="#Excel表列序号" class="headerlink" title="Excel表列序号"></a>Excel表列序号</h4><p>给你一个字符串 columnTitle ，表示 Excel 表格中的列名称。返回 该列名称对应的列序号 。<br>例如：</p>
+<pre><code>A -&gt; 1
+B -&gt; 2
+C -&gt; 3
+...
+Z -&gt; 26
+AA -&gt; 27
+AB -&gt; 28 
+...
+</code></pre>
+<p>示例 1:</p>
+<pre><code>输入: columnTitle = &quot;A&quot;
+输出: 1
+</code></pre>
+<p>示例 2:</p>
+<pre><code>输入: columnTitle = &quot;AB&quot;
+输出: 28
+</code></pre>
+<p>示例 3:</p>
+<pre><code>输入: columnTitle = &quot;ZY&quot;
+输出: 701
+</code></pre>
+<p>提示：</p>
+<ul>
+<li>1 &lt;&#x3D; columnTitle.length &lt;&#x3D; 7</li>
+<li>columnTitle 仅由大写英文组成</li>
+<li>columnTitle 在范围 [“A”, “FXSHRXW”] 内</li>
+</ul>
+<h5 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h5><hr>
+<p>我们已经知道Excel表列的本质就是一个26进制，因此只需要进行简单的循环遍历即可，值得注意的是，通过方法找到对应的code数值是同初始’A’的code数值进行做差后，需要加一</p>
+<hr>
+<h5 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h5><pre><code>/**
+ * @param &#123;string&#125; columnTitle
+ * @return &#123;number&#125;
+ */
+var titleToNumber = function (columnTitle) &#123;
+    let res = 0
+    for (let i = 0; i &lt; columnTitle.length; i++) &#123;
+        res = res * 26 + columnTitle.charCodeAt(i) + 1 - &#39;A&#39;.charCodeAt()
+    &#125;
+    return res
+&#125;;
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>JavaScript</tag>
+        <tag>进制转换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两个数组条件去重</title>
+    <url>/posts/4275346056.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="需求说明"><a href="#需求说明" class="headerlink" title="需求说明"></a>需求说明</h3><hr>
+<p>最近工作中遇到了一个数组去重相关的问题，大概场景是这样的</p>
+<hr>
+<p>有两个数组为 arrOen为oldlList:[‘1’, ‘2’, ‘3’, ‘4’, ‘5’]中随机项，arrTwo为oldlList中随机项加’_’再加随机数字<br>例如</p>
+<pre><code>list:[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]
+arrOen:[&#39;1&#39;,&#39;3&#39;]
+arrTwo:[&#39;5_2323&#39;,&#39;3_98&#39;,&#39;1_234&#39;,&#39;2_123&#39;,&#39;1_23&#39;,&#39;3_123&#39;,&#39;4_12&#39;,&#39;4_124&#39;]
+</code></pre>
+<p>需求为将arrTwo中的每一项的第一个字符不存在于arrOne的元素从arrTwo中删除<br>例如上例结果为</p>
+<pre><code>arrTwo:[&#39;1_234&#39;,&#39;1_23&#39;,&#39;3_123&#39;]
+</code></pre>
+<hr>
+<h3 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h3><hr>
+<p>第一步，将arrOne同目标list进行对比取反，即得到newArrOne:[‘2’,’4’,’5’]</p>
+<p>第二步，对得到的newArrOne进行遍历，内部则对arrTwo进行while循环处理，找出arrTwo中的第一个字符存在于arrOne的元素，将此元素删除</p>
+<hr>
+<h3 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h3><hr>
+<pre><code>let list = [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;];
+let arrOen = [&quot;1&quot;, &quot;3&quot;];
+let arrTwo = [&#39;5_2323&#39;,&#39;3_98&#39;,&#39;1_234&#39;,&#39;2_123&#39;,&#39;1_23&#39;,&#39;3_123&#39;,&#39;4_12&#39;,&#39;4_124&#39;]
+let newArrOne = [];
+list.forEach((a) =&gt; &#123;
+  let c = arrOen.findIndex((b) =&gt; a === b);
+  if (c &gt; -1) delete arrOen[c];
+  else newArrOne.push(a);
+&#125;);
+newArrOne.forEach((item) =&gt; &#123;
+  let i = arrTwo.length;
+  while (i--) &#123;
+    const ele = arrTwo[i];
+    if (item === ele.slice(0, 1)) &#123;
+      let index = arrTwo.indexOf(ele);
+      arrTwo.splice(index, 1);
+    &#125;
+  &#125;
+&#125;);
+console.log(arrTwo);
+</code></pre>
+<hr>
+<h3 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h3><hr>
+<h4 id="findIndex-方法"><a href="#findIndex-方法" class="headerlink" title="findIndex()方法"></a>findIndex()方法</h4><pre><code>定义和用法
+findIndex() 方法返回传入一个测试条件（函数）符合条件的数组第一个元素位置。
+
+findIndex() 方法为数组中的每个元素都调用一次函数执行：
+
+当数组中的元素在测试条件时返回 true 时, findIndex() 返回符合条件的元素的索引位置，之后的值不会再调用执行函数。
+如果没有符合条件的元素返回 -1
+注意: findIndex() 对于空数组，函数是不会执行的。
+
+注意: findIndex() 并没有改变数组的原始值。
+</code></pre>
+<pre><code>获取数组中年龄大于等于 18 的第一个元素索引位置
+var ages = [3, 10, 18, 20];
+ 
+function checkAdult(age) &#123;
+    return age &gt;= 18;
+&#125;
+ 
+function myFunction() &#123;
+    document.getElementById(&quot;demo&quot;).innerHTML = ages.findIndex(checkAdult);
+&#125;
+fruits 输出结果：
+2
+</code></pre>
+<pre><code>因此我们利用findIndex()来对arrOne取反
+list.forEach((a) =&gt; &#123;
+  let c = arrOen.findIndex((b) =&gt; a === b);
+  if (c &gt; -1) delete arrOen[c];
+  else newArrOne.push(a);
+&#125;);
+</code></pre>
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><pre><code>利用while循环主要解决JS遍历数组，删除数组元素时，怎么删都会漏掉一个的问题
+例如
+var arr = [1, 2, 2, 3, 4, 5];
+    var i = arr.length;
+    while(i--) &#123;
+        console.log(i + &#39; = &#39; + arr[i]);
+        if(arr[i] === 2) &#123;
+            arr.splice(i, 1);
+        &#125;
+     &#125;
+    console.log(arr);
+
+因此，在最后的循环去重的内部循环操作中选择了while循环
+newArrOne.forEach((item) =&gt; &#123;
+  let i = arrTwo.length;
+  while (i--) &#123;
+    const ele = arrTwo[i];
+    if (item === ele.slice(0, 1)) &#123;
+      let index = arrTwo.indexOf(ele);
+      arrTwo.splice(index, 1);
+    &#125;
+  &#125;
+&#125;);
+</code></pre>
+<pre><code>其他解决方法
+方法1：实时调整数组中元素的下标对应关系
+var arr = [1, 2, 2, 3, 4, 5];
+    for (var i = 0; i &lt; arr.length; i++)&#123;
+        // 打印数组中的情况，便于跟踪数组中数据的变化
+        console.log(i + &#39; = &#39; + arr[i]);
+        // 删除掉所有为2的元素
+        if(arr[i] === 2) &#123;
+            arr.splice(i--, 1);
+        &#125;
+    &#125;
+    console.log(arr);
+方法2：从后往前遍历数组元素
+var arr = [1, 2, 2, 3, 4, 5];
+    for (var i = arr.length - 1; i &gt;= 0; i--) &#123;
+        // 打印数组中的情况，便于跟踪数组中数据的变化
+        console.log(i + &#39; = &#39; + arr[i]);
+        // 删除掉所有为2的元素
+        if(arr[i] === 2) &#123;
+            arr.splice(i, 1);
+        &#125;
+    &#125;
+    console.log(arr);
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>数组</tag>
+        <tag>去重</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客介绍</title>
+    <url>/posts/486220008.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>欢迎来到liwenka1的博客</p>
+<h3 id="博客建立的初衷"><a href="#博客建立的初衷" class="headerlink" title="博客建立的初衷"></a>博客建立的初衷</h3><hr>
+<p>博客建立的初衷并没有多么的远大，只是简单的记录一下对于平常学习的笔记和心得，方便在自己闲暇之余巩固和复习知识。如果我的博客可以帮助到大家，我自然是非常的开心和欣慰。希望自己可以不断的坚持吧，等以后自己成长起来后回过头看看自己的学习历程应该也不乏是一个值得回味的事情。</p>
+<hr>
+<h3 id="博客未来的规划"><a href="#博客未来的规划" class="headerlink" title="博客未来的规划"></a>博客未来的规划</h3><hr>
+<p>说到未来的规划，其实并没有特别具体的想法。但是大体的思路还是有一些的，希望能像阮一峰这样的大佬一样，做一些类似于周刊的文章，不断分享自己的观点和思想。同时除了分享技术相关的文章，还会更新一些日常的内容，毕竟除了是一名程序员以外，还是一名专业的篮球爱好者、音乐倾听者、零食鉴赏专家，哈哈哈！！！</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>介绍</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>同构字符串和二分查找</title>
+    <url>/posts/258233023.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="同构字符串"><a href="#同构字符串" class="headerlink" title="同构字符串"></a>同构字符串</h3><hr>
+<p>给定两个字符串 s 和 t ，判断它们是否是同构的。</p>
+<p>如果 s 中的字符可以按某种映射关系替换得到 t ，那么这两个字符串是同构的。</p>
+<p>每个出现的字符都应当映射到另一个字符，同时不改变字符的顺序。不同字符不能映射到同一个字符上，相同字符只能映射到同一个字符上，字符可以映射到自己本身。</p>
+<p>示例 1:</p>
+<pre><code>输入：s = &quot;egg&quot;, t = &quot;add&quot;
+输出：true
+</code></pre>
+<p>示例 2：</p>
+<pre><code>输入：s = &quot;foo&quot;, t = &quot;bar&quot;
+输出：false
+</code></pre>
+<p>示例 3：</p>
+<pre><code>输入：s = &quot;paper&quot;, t = &quot;title&quot;
+输出：true
+</code></pre>
+<p>提示：</p>
+<ul>
+<li>1 &lt;&#x3D; s.length &lt;&#x3D; 5 * 104</li>
+<li>t.length &#x3D;&#x3D; s.length</li>
+<li>s 和 t 由任意有效的 ASCII 字符组成</li>
+</ul>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><hr>
+<p>利用map对象分别储存’s’和’t’的每一项进行互为键值的单向映射（即{‘e’&#x3D;&gt;’a’},{‘a’&#x3D;&gt;’e’），并进行循环判断’s’和’t’的当前字符是否已经被进行映射<br>若出现冲突（即当前下标i对应的字符s[i]所映射的值t[i]已经存在且与当前的t[i]不相同或当前下标i对应的字符t[i]所映射的值s[i]已经存在且与当前的s[i]）时说明两个字符串无法构成同构，返回false<br>如果遍历结束没有出现冲突，则表明两个字符串是同构的，返回true</p>
+<hr>
+<h4 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h4><pre><code>/**
+ * @param &#123;string&#125; s
+ * @param &#123;string&#125; t
+ * @return &#123;boolean&#125;
+ */
+var isIsomorphic = function (s, t) &#123;
+    const mapS = new Map()
+    const mapT = new Map()
+    for (i = 0; i &lt; s.length; i++) &#123;
+        if (mapS.get(s[i]) &amp;&amp; mapS.get(s[i]) != t[i] || mapT.get(t[i]) &amp;&amp; mapT.get(t[i]) != s[i]) &#123;
+            return false
+        &#125;
+        mapS.set(s[i], t[i])
+        mapT.set(t[i], s[i])
+    &#125;
+    return true
+&#125;;
+</code></pre>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><hr>
+<p>给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。</p>
+<p>示例 1:</p>
+<pre><code>输入: nums = [-1,0,3,5,9,12], target = 9
+输出: 4
+解释: 9 出现在 nums 中并且下标为 4
+</code></pre>
+<p>示例 2:</p>
+<pre><code>输入: nums = [-1,0,3,5,9,12], target = 2
+输出: -1
+解释: 2 不存在 nums 中因此返回 -1
+</code></pre>
+<p>提示：</p>
+<ul>
+<li>你可以假设 nums 中的所有元素是不重复的。</li>
+<li>n 将在 [1, 10000]之间。</li>
+<li>nums 的每个元素都将在 [-9999, 9999]之间。</li>
+</ul>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><hr>
+<p>二分法查找的过程为，先寻找中心项nums[mid],通过比对nums[mid]和target，若相等则min即为寻找的下标，如果不相等则根据大小关系将查找范围减小一半<br>即：</p>
+<ul>
+<li>nums[mid] &#x3D; target,则mid为寻找的下标</li>
+<li>nums[mid] &gt; target,则target只可能在nums[mid]的左侧</li>
+<li>nums[mid] &lt; target,则target只可能在nums[mid]的右侧</li>
+</ul>
+<p>同时二分法的条件是查找范围不能为空，即left &lt;&#x3D; right<br>如果target在nums中，即可返回下标i<br>否则返回 -1</p>
+<hr>
+<h4 id="代码展示-1"><a href="#代码展示-1" class="headerlink" title="代码展示"></a>代码展示</h4><pre><code>/**
+ * @param &#123;number[]&#125; nums
+ * @param &#123;number&#125; target
+ * @return &#123;number&#125;
+ */
+var search = function (nums, target) &#123;
+    let left = 0
+    let right = nums.length - 1
+    while (left &lt;= right) &#123;
+        let mid = Math.floor((left + right) / 2)
+        let num = nums[mid]
+        if (num == target) &#123;
+            return mid
+        &#125; else if (num &lt; target) &#123;
+            left = mid + 1
+        &#125; else &#123;
+            right = mid - 1
+        &#125;
+    &#125;
+    return -1
+&#125;;
+</code></pre>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>map对象</tag>
+        <tag>查询</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象和面向过程</title>
+    <url>/posts/2927971748.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="面向对象基本概念"><a href="#面向对象基本概念" class="headerlink" title="面向对象基本概念"></a>面向对象基本概念</h3><hr>
+<p>面向对象 ( Object Oriented )就是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描述某个事物在整个解决问题的步骤中的行为。简写为：OOP</p>
+<hr>
+<h3 id="面向过程基本概念"><a href="#面向过程基本概念" class="headerlink" title="面向过程基本概念"></a>面向过程基本概念</h3><hr>
+<p>面向过程(Procedure Oriented)就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。简写为：POP</p>
+<hr>
+<h3 id="举例理解"><a href="#举例理解" class="headerlink" title="举例理解"></a>举例理解</h3><h4 id="大象放冰箱"><a href="#大象放冰箱" class="headerlink" title="大象放冰箱"></a>大象放冰箱</h4><hr>
+<p>OOP:<br>1.创建一个对象为冰箱，并且给予冰箱开门(open)和关门(close)以及放入(push)的属性<br>2.创建一个对象为大象<br>3.冰箱.open()<br>  冰箱.push(大象)<br>  冰箱.close()<br>小结:以冰箱为主视角来进行相应的操作</p>
+<p>POP:<br>1.找个冰箱把冰箱门打开<br>2.找个大象丢进冰箱里面<br>3.把冰箱门给关上<br>小结:并没有固定的主视角，在于我们需要什么就去找什么，或者说需要干什么就去干什么</p>
+<hr>
+<h4 id="五子棋"><a href="#五子棋" class="headerlink" title="五子棋"></a>五子棋</h4><p>OOP:<br>1.创建俩个对象，玩家A和玩家B<br>2.创建一个棋盘，绘制画面<br>3.创建系统规则，判断输赢<br>4.第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。</p>
+<p>POP:<br>1.开始游戏<br>2.进行下棋<br>3.绘制画面<br>4.判断输赢<br>5.返回步骤2或结束游戏<br>6.输出游戏结果</p>
+<hr>
+<h3 id="面向对象和面向过程优劣分析"><a href="#面向对象和面向过程优劣分析" class="headerlink" title="面向对象和面向过程优劣分析"></a>面向对象和面向过程优劣分析</h3><h4 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h4><hr>
+<p>优点：性能比面向对象好，因为类调用时需要实例化，开销比较大，比较消耗资源</p>
+<p>缺点：不易维护、不易复用、不易扩展</p>
+<hr>
+<h4 id="面向对象："><a href="#面向对象：" class="headerlink" title="面向对象："></a>面向对象：</h4><hr>
+<p>优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的系统，使系统 更加灵活、更加易于维护</p>
+<p>缺点：性能比面向过程差</p>
+<hr>
+<h3 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a>面向对象的三大特性</h3><hr>
+<p>1、封装</p>
+<p>隐藏对象的属性和实现细节，仅对外提供公共访问方式，将变化隔离，便于使用，提高复用性和安全性。</p>
+<p>2、继承</p>
+<p>提高代码复用性；继承是多态的前提。</p>
+<p>3、多态</p>
+<p>父类或接口定义的引用变量可以指向子类或具体实现类的实例对象。提高了程序的拓展性。</p>
+<hr>
+<h3 id="代码举例"><a href="#代码举例" class="headerlink" title="代码举例"></a>代码举例</h3><pre><code>const arr1 = [1, 2, 2, 3, 4, 4, 5, 6]; // 去重
+const arr2 = [1, 3, 5, 6]; // 翻转
+// OOP
+const obj = &#123;
+  fnFilter: (arr) =&gt; &#123;
+    return arr.filter((item, i) =&gt; &#123;
+      return arr.indexOf(item) === i;
+    &#125;);
+  &#125;,
+  fnReverse: (arr) =&gt; &#123;
+    return arr.reverse();
+  &#125;,
+&#125;;
+let OOP1 = obj.fnFilter(arr1);
+let OOP2 = obj.fnReverse(arr2);
+console.log(OOP1, OOP2); // [ 1, 2, 3, 4, 5, 6 ] [ 6, 5, 3, 1 ]
+// POP
+const fnFilter = (arr) =&gt; &#123;
+  return arr.filter((item, i) =&gt; &#123;
+    return arr.indexOf(item) === i;
+  &#125;);
+&#125;;
+let POP1 = fnFilter(arr1);
+const fnReverse = (arr) =&gt; &#123;
+  return arr.reverse();
+&#125;;
+let POP2 = fnReverse(arr2);
+console.log(POP1, POP2);// [ 1, 2, 3, 4, 5, 6 ] [ 6, 5, 3, 1 ]
+</code></pre>
+]]></content>
+      <categories>
+        <category>编程思想</category>
+      </categories>
+      <tags>
+        <tag>面向对象</tag>
+        <tag>面向过程</tag>
+      </tags>
+  </entry>
+</search>

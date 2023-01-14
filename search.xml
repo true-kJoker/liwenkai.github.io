@@ -106,6 +106,21 @@ var titleToNumber = function (columnTitle) &#123;
       </tags>
   </entry>
   <entry>
+    <title>博客介绍</title>
+    <url>/posts/486220008.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>欢迎来到liwenka1的博客</p>
+<h3 id="博客建立的初衷"><a href="#博客建立的初衷" class="headerlink" title="博客建立的初衷"></a>博客建立的初衷</h3><hr>
+<p>博客建立的初衷并没有多么的远大，只是简单的记录一下对于平常学习的笔记和心得，方便在自己闲暇之余巩固和复习知识。如果我的博客可以帮助到大家，我自然是非常的开心和欣慰。希望自己可以不断的坚持吧，等以后自己成长起来后回过头看看自己的学习历程应该也不乏是一个值得回味的事情。</p>
+<hr>
+<h3 id="博客未来的规划"><a href="#博客未来的规划" class="headerlink" title="博客未来的规划"></a>博客未来的规划</h3><hr>
+<p>说到未来的规划，其实并没有特别具体的想法。但是大体的思路还是有一些的，希望能像阮一峰这样的大佬一样，做一些类似于周刊的文章，不断分享自己的观点和思想。同时除了分享技术相关的文章，还会更新一些日常的内容，毕竟除了是一名程序员以外，还是一名专业的篮球爱好者、音乐倾听者、零食鉴赏专家，哈哈哈！！！</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>介绍</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>两个数组条件去重</title>
     <url>/posts/4275346056.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="需求说明"><a href="#需求说明" class="headerlink" title="需求说明"></a>需求说明</h3><hr>
@@ -236,21 +251,6 @@ var arr = [1, 2, 2, 3, 4, 5];
         <tag>JavaScript</tag>
         <tag>数组</tag>
         <tag>去重</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客介绍</title>
-    <url>/posts/486220008.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>欢迎来到liwenka1的博客</p>
-<h3 id="博客建立的初衷"><a href="#博客建立的初衷" class="headerlink" title="博客建立的初衷"></a>博客建立的初衷</h3><hr>
-<p>博客建立的初衷并没有多么的远大，只是简单的记录一下对于平常学习的笔记和心得，方便在自己闲暇之余巩固和复习知识。如果我的博客可以帮助到大家，我自然是非常的开心和欣慰。希望自己可以不断的坚持吧，等以后自己成长起来后回过头看看自己的学习历程应该也不乏是一个值得回味的事情。</p>
-<hr>
-<h3 id="博客未来的规划"><a href="#博客未来的规划" class="headerlink" title="博客未来的规划"></a>博客未来的规划</h3><hr>
-<p>说到未来的规划，其实并没有特别具体的想法。但是大体的思路还是有一些的，希望能像阮一峰这样的大佬一样，做一些类似于周刊的文章，不断分享自己的观点和思想。同时除了分享技术相关的文章，还会更新一些日常的内容，毕竟除了是一名程序员以外，还是一名专业的篮球爱好者、音乐倾听者、零食鉴赏专家，哈哈哈！！！</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>介绍</tag>
       </tags>
   </entry>
   <entry>

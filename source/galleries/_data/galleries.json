@@ -9,6 +9,12 @@
     "name": "动漫人物",
     "cover": "/medias/动漫人物/Jolyne.jpg",
     "description": "动漫人物",
-    "photos": ["/medias/动漫人物/Jolyne.jpg", "/medias/动漫人物/jojoWorld.jpg"]
+    "photos": [
+      "/medias/动漫人物/Jolyne.jpg",
+      "/medias/动漫人物/jojoWorld.jpg",
+      "/medias/动漫人物/00.jpg",
+      "/medias/动漫人物/01.jpg",
+      "/medias/动漫人物/02.jpg"
+    ]
   }
 ]

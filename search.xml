@@ -505,4 +505,45 @@ arr = [[0,1],[0,1]]
         <tag>排序</tag>
       </tags>
   </entry>
+  <entry>
+    <title>个人网站需求分析和技术选型</title>
+    <url>/posts/3758264017.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="项目目的"><a href="#项目目的" class="headerlink" title="项目目的"></a>项目目的</h3><hr>
+<ul>
+<li>提升自身技术能力，扩展技术栈</li>
+<li>通过制作个人平台进行技术分享交流</li>
+</ul>
+<hr>
+<h3 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h3><hr>
+<h4 id="前台页面功能"><a href="#前台页面功能" class="headerlink" title="前台页面功能"></a>前台页面功能</h4><ul>
+<li>首页</li>
+<li>标签</li>
+<li>分类</li>
+<li>归档</li>
+<li>音乐</li>
+<li>关于</li>
+<li>注册</li>
+<li>登录</li>
+<li>搜索</li>
+<li>评论</li>
+</ul>
+<h4 id="后台页面功能"><a href="#后台页面功能" class="headerlink" title="后台页面功能"></a>后台页面功能</h4><ul>
+<li>文章管理</li>
+<li>用户管理</li>
+<li>评论管理</li>
+<li>登录</li>
+</ul>
+<hr>
+<h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><hr>
+<p>前端:vue3+ts+vite+elementplus+pinia+tailwindcss+iconfont<br>后端:nest.js<br>其他相关技术待定</p>
+<hr>
+]]></content>
+      <categories>
+        <category>网站制作</category>
+      </categories>
+      <tags>
+        <tag>需求分析</tag>
+        <tag>技术选型</tag>
+      </tags>
+  </entry>
 </search>

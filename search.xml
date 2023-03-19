@@ -535,7 +535,7 @@ arr = [[0,1],[0,1]]
 </ul>
 <hr>
 <h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><hr>
-<p>前端:vue3+ts+vite+elementplus+pinia+tailwindcss+iconfont<br>后端:nest.js<br>其他相关技术待定</p>
+<p>前端:react18+typescript+recoil+ant desing+axios<br>后端:nest.js+typescript<br>其他相关技术待定</p>
 <hr>
 ]]></content>
       <categories>

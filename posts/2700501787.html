@@ -5,14 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="隐藏个人信息, 自由">
-    <meta name="description" content="题目及示例给你一条个人信息字符串 s ，可能表示一个 邮箱地址 ，也可能表示一串 电话号码 。返回按如下规则 隐藏 个人信息后的结果：
-
+    <meta name="description" content="题目及示例
+给你一条个人信息字符串 s ，可能表示一个 邮箱地址 ，也可能表示一串 电话号码 。返回按如下规则 隐藏 个人信息后的结果：
 电子邮件地址：
-
 一个电子邮件地址由以下部分组成：
-
-一个 名字 ，由大小写英文字母组成，后面跟着
-一">
+一个 名字 ，由大小写英文字母组成，后面跟着一个 ‘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -451,76 +448,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="题目及示例"><a href="#题目及示例" class="headerlink" title="题目及示例"></a>题目及示例</h3><pre><code>给你一条个人信息字符串 s ，可能表示一个 邮箱地址 ，也可能表示一串 电话号码 。返回按如下规则 隐藏 个人信息后的结果：
-
-电子邮件地址：
-
-一个电子邮件地址由以下部分组成：
-
-一个 名字 ，由大小写英文字母组成，后面跟着
-一个 &#39;@&#39; 字符，后面跟着
-一个 域名 ，由大小写英文字母和一个位于中间的 &#39;.&#39; 字符组成。&#39;.&#39; 不会是域名的第一个或者最后一个字符。
-要想隐藏电子邮件地址中的个人信息：
-
-名字 和 域名 部分的大写英文字母应当转换成小写英文字母。
-名字 中间的字母（即，除第一个和最后一个字母外）必须用 5 个 &quot;*****&quot; 替换。
-电话号码：
-
-一个电话号码应当按下述格式组成：
-
-电话号码可以由 10-13 位数字组成
-后 10 位构成 本地号码
-前面剩下的 0-3 位，构成 国家代码
-利用 &#123;&#39;+&#39;, &#39;-&#39;, &#39;(&#39;, &#39;)&#39;, &#39; &#39;&#125; 这些 分隔字符 按某种形式对上述数字进行分隔
-要想隐藏电话号码中的个人信息：
-
-移除所有 分隔字符
-隐藏个人信息后的电话号码应该遵从这种格式：
-&quot;***-***-XXXX&quot; 如果国家代码为 0 位数字
-&quot;+*-***-***-XXXX&quot; 如果国家代码为 1 位数字
-&quot;+**-***-***-XXXX&quot; 如果国家代码为 2 位数字
-&quot;+***-***-***-XXXX&quot; 如果国家代码为 3 位数字
-&quot;XXXX&quot; 是最后 4 位 本地号码
- 
-示例 1：
-
-输入：s = &quot;LeetCode@LeetCode.com&quot;
-输出：&quot;l*****e@leetcode.com&quot;
-解释：s 是一个电子邮件地址。
-名字和域名都转换为小写，名字的中间用 5 个 * 替换。
-示例 2：
-
-输入：s = &quot;AB@qq.com&quot;
-输出：&quot;a*****b@qq.com&quot;
-解释：s 是一个电子邮件地址。
-名字和域名都转换为小写，名字的中间用 5 个 * 替换。
-注意，尽管 &quot;ab&quot; 只有两个字符，但中间仍然必须有 5 个 * 。
-示例 3：
-
-输入：s = &quot;1(234)567-890&quot;
-输出：&quot;***-***-7890&quot;
-解释：s 是一个电话号码。
-共计 10 位数字，所以本地号码为 10 位数字，国家代码为 0 位数字。
-因此，隐藏后的电话号码应该是 &quot;***-***-7890&quot; 。
-示例 4：
-
-输入：s = &quot;86-(10)12345678&quot;
-输出：&quot;+**-***-***-5678&quot;
-解释：s 是一个电话号码。
-共计 12 位数字，所以本地号码为 10 位数字，国家代码为 2 位数字。
-因此，隐藏后的电话号码应该是 &quot;+**-***-***-7890&quot; 。
- 
-
-提示：
-
-s 是一个 有效 的电子邮件或者电话号码
-如果 s 是一个电子邮件：
-8 &lt;= s.length &lt;= 40
-s 是由大小写英文字母，恰好一个 &#39;@&#39; 字符，以及 &#39;.&#39; 字符组成
-如果 s 是一个电话号码：
-10 &lt;= s.length &lt;= 20
-s 是由数字、空格、字符 &#39;(&#39;、&#39;)&#39;、&#39;-&#39; 和 &#39;+&#39; 组成
-</code></pre>
+                <h3 id="题目及示例"><a href="#题目及示例" class="headerlink" title="题目及示例"></a>题目及示例</h3><hr>
+<p>给你一条个人信息字符串 s ，可能表示一个 邮箱地址 ，也可能表示一串 电话号码 。返回按如下规则 隐藏 个人信息后的结果：</p>
+<p>电子邮件地址：</p>
+<p>一个电子邮件地址由以下部分组成：</p>
+<p>一个 名字 ，由大小写英文字母组成，后面跟着<br>一个 ‘@’ 字符，后面跟着<br>一个 域名 ，由大小写英文字母和一个位于中间的 ‘.’ 字符组成。’.’ 不会是域名的第一个或者最后一个字符。<br>要想隐藏电子邮件地址中的个人信息：</p>
+<p>名字 和 域名 部分的大写英文字母应当转换成小写英文字母。<br>名字 中间的字母（即，除第一个和最后一个字母外）必须用 5 个 “*****” 替换。<br>电话号码：</p>
+<p>一个电话号码应当按下述格式组成：</p>
+<p>电话号码可以由 10-13 位数字组成<br>后 10 位构成 本地号码<br>前面剩下的 0-3 位，构成 国家代码<br>利用 {‘+’, ‘-‘, ‘(‘, ‘)’, ‘ ‘} 这些 分隔字符 按某种形式对上述数字进行分隔<br>要想隐藏电话号码中的个人信息：</p>
+<p>移除所有 分隔字符<br>隐藏个人信息后的电话号码应该遵从这种格式：<br>“<em><strong>-</strong></em>-XXXX” 如果国家代码为 0 位数字<br>“+<em>-</em><strong>-</strong><em>-XXXX” 如果国家代码为 1 位数字<br>“+<strong>-</strong></em>-<em><strong>-XXXX” 如果国家代码为 2 位数字<br>“+</strong></em>-<em><strong>-</strong></em>-XXXX” 如果国家代码为 3 位数字<br>“XXXX” 是最后 4 位 本地号码<br> <br>示例 1：</p>
+<p>输入：s &#x3D; “<a href="mailto:&#x4c;&#x65;&#x65;&#x74;&#67;&#x6f;&#x64;&#101;&#x40;&#x4c;&#x65;&#101;&#116;&#67;&#111;&#100;&#101;&#46;&#x63;&#x6f;&#109;">&#x4c;&#x65;&#x65;&#x74;&#67;&#x6f;&#x64;&#101;&#x40;&#x4c;&#x65;&#101;&#116;&#67;&#111;&#100;&#101;&#46;&#x63;&#x6f;&#109;</a>“<br>输出：”l*****<a href="mailto:&#x65;&#x40;&#108;&#101;&#101;&#116;&#x63;&#111;&#x64;&#101;&#x2e;&#99;&#111;&#x6d;">&#x65;&#x40;&#108;&#101;&#101;&#116;&#x63;&#111;&#x64;&#101;&#x2e;&#99;&#111;&#x6d;</a>“<br>解释：s 是一个电子邮件地址。<br>名字和域名都转换为小写，名字的中间用 5 个 * 替换。<br>示例 2：</p>
+<p>输入：s &#x3D; “<a href="mailto:&#65;&#66;&#x40;&#x71;&#x71;&#x2e;&#99;&#111;&#x6d;">&#65;&#66;&#x40;&#x71;&#x71;&#x2e;&#99;&#111;&#x6d;</a>“<br>输出：”a*****<a href="mailto:&#98;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;">&#98;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;</a>“<br>解释：s 是一个电子邮件地址。<br>名字和域名都转换为小写，名字的中间用 5 个 * 替换。<br>注意，尽管 “ab” 只有两个字符，但中间仍然必须有 5 个 * 。<br>示例 3：</p>
+<p>输入：s &#x3D; “1(234)567-890”<br>输出：”<em><strong>-</strong></em>-7890”<br>解释：s 是一个电话号码。<br>共计 10 位数字，所以本地号码为 10 位数字，国家代码为 0 位数字。<br>因此，隐藏后的电话号码应该是 “<em><strong>-</strong></em>-7890” 。<br>示例 4：</p>
+<p>输入：s &#x3D; “86-(10)12345678”<br>输出：”+<strong>-</strong><em>-</em><strong>-5678”<br>解释：s 是一个电话号码。<br>共计 12 位数字，所以本地号码为 10 位数字，国家代码为 2 位数字。<br>因此，隐藏后的电话号码应该是 “+</strong>-<em><strong>-</strong></em>-7890” 。
+ </p>
+<p>提示：</p>
+<p>s 是一个 有效 的电子邮件或者电话号码<br>如果 s 是一个电子邮件：<br>8 &lt;&#x3D; s.length &lt;&#x3D; 40<br>s 是由大小写英文字母，恰好一个 ‘@’ 字符，以及 ‘.’ 字符组成<br>如果 s 是一个电话号码：<br>10 &lt;&#x3D; s.length &lt;&#x3D; 20<br>s 是由数字、空格、字符 ‘(‘、’)’、’-‘ 和 ‘+’ 组成</p>
+<hr>
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><hr>
 <h4 id="判断s为邮箱还是电话号码"><a href="#判断s为邮箱还是电话号码" class="headerlink" title="判断s为邮箱还是电话号码"></a>判断s为邮箱还是电话号码</h4><pre><code>通过题目可知道邮箱与电话号码最大的区别在于是否包含&quot;@&quot;
 因此可通过 s.includes(&quot;@&quot;) 来进行判断
@@ -556,6 +500,7 @@ for (let i = 0; i &lt; s.length; i++) &#123;
 将前缀和号码最后四位数字拼接即可
 return numstr[len - 10] + res.slice(len - 4, len)
 </code></pre>
+<hr>
 <h3 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h3><pre><code>var maskPII = function (s) &#123;
     if (s.includes(&quot;@&quot;)) &#123;
         const n = s.indexOf(&quot;@&quot;)
@@ -694,18 +639,17 @@ return numstr[len - 10] + res.slice(len - 4, len)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/2700501787.html">
+                <a href="/posts/3774039439.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="隐藏个人信息">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="多边形三角剖分的最低得分">
                         
-                        <span class="card-title">隐藏个人信息</span>
+                        <span class="card-title">多边形三角剖分的最低得分</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -715,9 +659,9 @@ return numstr[len - 10] + res.slice(len - 4, len)
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-02
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -730,20 +674,19 @@ return numstr[len - 10] + res.slice(len - 4, len)
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
+                    <a href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="chip bg-color">数组</span>
                     </a>
                     
                     <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">
                         <span class="chip bg-color">每日一题</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>

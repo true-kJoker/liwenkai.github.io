@@ -730,4 +730,162 @@ return numstr[len - 10] + res.slice(len - 4, len)
         <tag>贪心</tag>
       </tags>
   </entry>
+  <entry>
+    <title>vue3组件通信</title>
+    <url>/posts/3653758224.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="vue3组件通信"><a href="#vue3组件通信" class="headerlink" title="vue3组件通信"></a>vue3组件通信</h3><h4 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h4><hr>
+<ul>
+<li>props</li>
+<li>emit</li>
+<li>v-model</li>
+<li>provide&#x2F;inject</li>
+<li>eventBus(vue3以删除)</li>
+<li>vuex&#x2F;pinia(状态管理工具)</li>
+</ul>
+<hr>
+<h4 id="props"><a href="#props" class="headerlink" title="props"></a>props</h4><p>通常用于父传子</p>
+<pre><code>// parent.vue
+&lt;template&gt;
+    &lt;child :data=&quot;data&quot;&gt;&lt;/child&gt;
+&lt;/template&gt;
+&lt;script setup&gt;
+import &#123; reactive &#125; from &quot;vue&quot;
+import child from &quot;./child.vue&quot;
+
+const data = reactive([&#39;一号伞兵&#39;,&#39;二号伞兵&#39;])
+&lt;script&gt;
+
+// child.vue
+&lt;template&gt;
+    &lt;span v-for = &#39;item in props.data&#39;&gt;&#123;&#123;item&#125;&#125;&lt;/span&gt;
+&lt;/template&gt;
+&lt;script setup&gt;
+  const props = defineProps(&#123;
+        data:&#123;
+            type:[] as any,
+            default:[]
+        &#125;
+    &#125;)
+&lt;script&gt;
+</code></pre>
+<h4 id="emit"><a href="#emit" class="headerlink" title="emit"></a>emit</h4><pre><code>// child.vue 
+&lt;template&gt;
+    &lt;button @click=&quot;handleClick&quot;&gt;按钮&lt;/buttom&gt;
+&lt;/template&gt;
+&lt;script setup&gt;
+    const emit = defineEmits([&quot;myClick&quot;])
+    const handleClick = ()=&gt;&#123;
+        emit(&quot;myClick&quot;, &quot;这是发送给父组件的信息&quot;)
+    &#125;
+&lt;/script&gt;
+
+// Parent.vue
+&lt;template&gt;
+    &lt;child @myClick=&quot;onMyClick&quot;&gt;&lt;/child&gt;
+&lt;/template&gt;
+&lt;script setup&gt;
+    import child from &quot;./child.vue&quot;
+    const onMyClick = (msg) =&gt; &#123;
+        console.log(msg) // 这是父组件收到的信息
+    &#125;
+&lt;/script&gt;
+</code></pre>
+<h4 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h4><pre><code>// child.vue 
+&lt;template&gt;
+    &lt;button @click=&quot;handleClick&quot;&gt;按钮&lt;/buttom&gt;
+&lt;/template&gt;
+&lt;script setup&gt;
+    const props = defineProps(&#123;
+    list: &#123;
+        type: [] as any,
+        default:[]
+    &#125;,
+    &#125;);
+    const emits = defineEmits([&quot;update:list&quot;]);
+    const handleClick = ()=&gt;&#123;
+        const list = props.list;
+        list.push(&quot;伞兵二号&quot;);
+        emits(&quot;update:list&quot;, list);
+    &#125;
+&lt;/script&gt;
+
+// Parent.vue
+&lt;template&gt;
+    &lt;span v-for=&quot;item in list&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/span&gt;
+    &lt;child v-model:list=&quot;list&quot; &gt;&lt;/child&gt;
+&lt;/template&gt;
+&lt;script setup&gt;
+    import child from &quot;./child.vue&quot;
+    const list = reactive([&quot;伞兵一号&quot;])
+&lt;/script&gt;
+</code></pre>
+<h4 id="provide-x2F-inject"><a href="#provide-x2F-inject" class="headerlink" title="provide&#x2F;inject"></a>provide&#x2F;inject</h4><pre><code>// parent.vue
+&lt;template&gt;
+    &lt;child&gt;&lt;/child&gt;
+&lt;/template&gt;
+&lt;script setup&gt;
+import &#123; ref, provide &#125; from &quot;vue&quot;;
+const name = ref(&quot;provide&quot;);
+provide(&quot;child&quot;, name.value);
+&lt;script&gt;
+
+// child.vue
+&lt;template&gt;
+    &lt;span&gt;&#123;&#123;child&#125;&#125;&lt;/span&gt;
+&lt;/template&gt;
+&lt;script setup&gt;
+    import &#123; inject &#125; from &quot;vue&quot;;
+    const name = inject(&quot;child&quot;);
+&lt;script&gt;
+</code></pre>
+]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>组件通信</tag>
+        <tag>vue3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>负二进制转换</title>
+    <url>/posts/3174520385.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="题目及示例"><a href="#题目及示例" class="headerlink" title="题目及示例"></a>题目及示例</h3><hr>
+<p>给你一个整数 n ，以二进制字符串的形式返回该整数的 负二进制（base -2）表示。</p>
+<p>注意，除非字符串就是 “0”，否则返回的字符串中不能含有前导零。</p>
+<p> </p>
+<p>示例 1：</p>
+<p>输入：n &#x3D; 2<br>输出：”110”<br>解释：(-2)2 + (-2)1 &#x3D; 2<br>示例 2：</p>
+<p>输入：n &#x3D; 3<br>输出：”111”<br>解释：(-2)2 + (-2)1 + (-2)0 &#x3D; 3<br>示例 3：</p>
+<p>输入：n &#x3D; 4<br>输出：”100”<br>解释：(-2)2 &#x3D; 4
+ </p>
+<p>提示：</p>
+<p>0 &lt;&#x3D; n &lt;&#x3D; 109</p>
+<hr>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><hr>
+<p>和转换二进制思路基本一致<br>但是值得注意的是，同 -2 取余数会有-1，0，1三种结果<br>因此取余数的绝对值进行相加即可<br>余数为 0 时，直接将 n 除以 -2<br>余数不为 0 时，则将 n 减去余数的绝对值即 1 除以 -2<br>最后将结果进行反转即可</p>
+<hr>
+<h3 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h3><pre><code>var baseNeg2 = function (n) &#123;
+    if (n == 0 || n == 1) &#123;
+        return &#39;&#39; + n
+    &#125;
+    let res = &#39;&#39;
+    while (n) &#123;
+        let ans = n % (-2)
+        n = ans == 0 ? n / (-2) : (n - 1) / (-2)
+        res += Math.abs(ans)
+    &#125;
+    return res.split(&#39;&#39;).reverse().join(&#39;&#39;)
+&#125;
+</code></pre>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>进制转换</tag>
+        <tag>每日一题</tag>
+      </tags>
+  </entry>
 </search>

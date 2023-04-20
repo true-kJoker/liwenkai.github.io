@@ -4,13 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="交换一次的先前排列, 自由">
+    <meta name="keywords" content="负二进制转换, 自由">
     <meta name="description" content="题目及示例
-给你一个正整数数组 arr（可能存在重复的元素），请你返回可在 一次交换（交换两数字 arr[i] 和 arr[j] 的位置）后得到的、按字典序排列小于 arr 的最大排列。
-如果无法这么操作，就请返回原数组。
+给你一个整数 n ，以二进制字符串的形式返回该整数的 负二进制（base -2）表示。
+注意，除非字符串就是 “0”，否则返回的字符串中不能含有前导零。
  
 示例 1：
-">
+输入：n &amp;#x3D; 2输出：”110”解释：(-2)2">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>交换一次的先前排列 | 自由</title>
+    <title>负二进制转换 | 自由</title>
     <link rel="icon" type="image/png" href="/medias/international.png">
     
 
@@ -366,12 +366,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">交换一次的先前排列</h1>
+                    <h1 class="description center-align post-title">负二进制转换</h1>
                 </div>
             </div>
         </div>
@@ -395,16 +395,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E7%BB%84/">
-                                <span class="chip bg-color">数组</span>
+                            <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                                <span class="chip bg-color">数学</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
+                                <span class="chip bg-color">进制转换</span>
                             </a>
                         
                             <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">
                                 <span class="chip bg-color">每日一题</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%B4%AA%E5%BF%83/">
-                                <span class="chip bg-color">贪心</span>
                             </a>
                         
                     </div>
@@ -428,7 +428,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-04-03
+                    2023-04-07
                 </div>
                 
 
@@ -450,35 +450,31 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="题目及示例"><a href="#题目及示例" class="headerlink" title="题目及示例"></a>题目及示例</h3><hr>
-<p>给你一个正整数数组 arr（可能存在重复的元素），请你返回可在 一次交换（交换两数字 arr[i] 和 arr[j] 的位置）后得到的、按字典序排列小于 arr 的最大排列。</p>
-<p>如果无法这么操作，就请返回原数组。</p>
+<p>给你一个整数 n ，以二进制字符串的形式返回该整数的 负二进制（base -2）表示。</p>
+<p>注意，除非字符串就是 “0”，否则返回的字符串中不能含有前导零。</p>
 <p> </p>
 <p>示例 1：</p>
-<p>输入：arr &#x3D; [3,2,1]<br>输出：[3,1,2]<br>解释：交换 2 和 1<br>示例 2：</p>
-<p>输入：arr &#x3D; [1,1,5]<br>输出：[1,1,5]<br>解释：已经是最小排列<br>示例 3：</p>
-<p>输入：arr &#x3D; [1,9,4,6,7]<br>输出：[1,7,4,6,9]<br>解释：交换 9 和 7
+<p>输入：n &#x3D; 2<br>输出：”110”<br>解释：(-2)2 + (-2)1 &#x3D; 2<br>示例 2：</p>
+<p>输入：n &#x3D; 3<br>输出：”111”<br>解释：(-2)2 + (-2)1 + (-2)0 &#x3D; 3<br>示例 3：</p>
+<p>输入：n &#x3D; 4<br>输出：”100”<br>解释：(-2)2 &#x3D; 4
  </p>
 <p>提示：</p>
-<p>1 &lt;&#x3D; arr.length &lt;&#x3D; 104<br>1 &lt;&#x3D; arr[i] &lt;&#x3D; 104</p>
+<p>0 &lt;&#x3D; n &lt;&#x3D; 109</p>
 <hr>
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><hr>
-<p>题目主要考察的贪心算法<br>首先对数组进行由后向前的遍历<br>通过对比当前项与后一项的大小来进行判断<br>若 arr[i] &gt; arr[i+1]<br>此时再次由后向前遍历<br>直到找到比 arr[i] 小的且离 arr[i] 最远的元素 arr[j]<br>同时保证 arr[j] 与 arr[j-1] 不相等<br>最后将 arr[i] 与 arr[j] 进行交换</p>
+<p>和转换二进制思路基本一致<br>但是值得注意的是，同 -2 取余数会有-1，0，1三种结果<br>因此取余数的绝对值进行相加即可<br>余数为 0 时，直接将 n 除以 -2<br>余数不为 0 时，则将 n 减去余数的绝对值即 1 除以 -2<br>最后将结果进行反转即可</p>
 <hr>
-<h3 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h3><pre><code>var prevPermOpt1 = function (arr) &#123;
-    let n = arr.length
-    for (let i = n - 2; i &gt;= 0; i--) &#123;
-        if (arr[i] &gt; arr[i + 1]) &#123;
-            let j = n - 1
-            while (arr[j] == arr[j - 1] || arr[j] &gt;= arr[i]) &#123;
-                j--
-            &#125;
-            let temp = arr[j]
-            arr[j] = arr[i]
-            arr[i] = temp
-            break
-        &#125;
+<h3 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h3><pre><code>var baseNeg2 = function (n) &#123;
+    if (n == 0 || n == 1) &#123;
+        return &#39;&#39; + n
     &#125;
-    return arr
+    let res = &#39;&#39;
+    while (n) &#123;
+        let ans = n % (-2)
+        n = ans == 0 ? n / (-2) : (n - 1) / (-2)
+        res += Math.abs(ans)
+    &#125;
+    return res.split(&#39;&#39;).reverse().join(&#39;&#39;)
 &#125;
 </code></pre>
 
@@ -507,7 +503,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://liwenka1.github.io/posts/3709040576.html">https://liwenka1.github.io/posts/3709040576.html</a>
+                    <a href="https://liwenka1.github.io/posts/3174520385.html">https://liwenka1.github.io/posts/3174520385.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,16 +541,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E7%BB%84/">
-                                    <span class="chip bg-color">数组</span>
+                                <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                                    <span class="chip bg-color">数学</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
+                                    <span class="chip bg-color">进制转换</span>
                                 </a>
                             
                                 <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">
                                     <span class="chip bg-color">每日一题</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%B4%AA%E5%BF%83/">
-                                    <span class="chip bg-color">贪心</span>
                                 </a>
                             
                         </div>
@@ -604,13 +600,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/3174520385.html">
+                <a href="/posts/3653758224.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="负二进制转换">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="vue3组件通信">
                         
-                        <span class="card-title">负二进制转换</span>
+                        <span class="card-title">vue3组件通信</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -621,14 +617,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-07
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/Vue/" class="post-category">
+                                    Vue
                                 </a>
                             
                             
@@ -638,16 +634,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                        <span class="chip bg-color">数学</span>
+                    <a href="/tags/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">
+                        <span class="chip bg-color">组件通信</span>
                     </a>
                     
-                    <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
-                        <span class="chip bg-color">进制转换</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">
-                        <span class="chip bg-color">每日一题</span>
+                    <a href="/tags/vue3/">
+                        <span class="chip bg-color">vue3</span>
                     </a>
                     
                 </div>
@@ -661,13 +653,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3774039439.html">
+                <a href="/posts/3709040576.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="多边形三角剖分的最低得分">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="交换一次的先前排列">
                         
-                        <span class="card-title">多边形三角剖分的最低得分</span>
+                        <span class="card-title">交换一次的先前排列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -678,7 +670,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
                             </span>
                         <span class="publish-author">
                             
@@ -703,8 +695,8 @@
                         <span class="chip bg-color">每日一题</span>
                     </a>
                     
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
+                    <a href="/tags/%E8%B4%AA%E5%BF%83/">
+                        <span class="chip bg-color">贪心</span>
                     </a>
                     
                 </div>

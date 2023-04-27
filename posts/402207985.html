@@ -4,8 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: 进制转换, 自由">
-    <meta name="description" content="自由">
+    <meta name="keywords" content="三元表达式, 自由">
+    <meta name="description" content="三元表达式
+什么是三元表达式？
+
+又叫三元运算符，必须有三个操作数参与的运算
+操作符号：? :
+属于条件判断语句
+
+例如
+
+me === &amp;quot;帅哥&amp;quot; ? &amp;quot;你说对了!&amp;quot; : &amp;quot;你什么眼神？&amp;q">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +26,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签: 进制转换 | 自由</title>
+    <title>三元表达式 | 自由</title>
     <link rel="icon" type="image/png" href="/medias/international.png">
     
 
@@ -357,331 +366,513 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                与君共勉
-                
-            </div>
+    
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "从来没有真正的绝境, 只有心灵的迷途",
-                            
-                                "Never really desperate, only the lost of the soul",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">三元表达式</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%B8%89%E5%85%83%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                                <span class="chip bg-color">三元表达式</span>
+                            </a>
+                        
+                            <a href="/tags/if-%E8%AF%AD%E5%8F%A5/">
+                                <span class="chip bg-color">if 语句</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" class="post-category">
+                                编程规范
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-04-27
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="三元表达式"><a href="#三元表达式" class="headerlink" title="三元表达式"></a>三元表达式</h3><hr>
+<p>什么是三元表达式？</p>
+<ul>
+<li>又叫三元运算符，必须有三个操作数参与的运算</li>
+<li>操作符号：? :</li>
+<li>属于条件判断语句</li>
+</ul>
+<pre><code>例如
+
+me === &quot;帅哥&quot; ? &quot;你说对了!&quot; : &quot;你什么眼神？&quot;
+</code></pre>
+<ul>
+<li>这就是最简单的三元表达式，同时我们可以通过扩展进行连续判断</li>
+</ul>
+<pre><code>例如
+
+me === &quot;帅哥&quot; ? &quot;你说对了!&quot; : you === &quot;笨蛋&quot; ? &quot;肯定的&quot; : &quot;你什么眼神？&quot;
+</code></pre>
+<ul>
+<li>但是如果我们一直链式判断下去是不合理的，会严重影响理解和阅读，对于后期的维护工作可以说是添加了一份耐人寻味的颜色</li>
+<li>因此倘若我们要进行多次的连续判断在这里我依旧推荐大家使用可读性更高的 if 语句</li>
+</ul>
+<hr>
+<h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><hr>
+<p>什么是 if 语句?</p>
+<ul>
+<li>使用 if 语句来规定假如条件为 true 时被执行的 JavaScript 代码块。</li>
+</ul>
+<pre><code>例如
+
+if(me === &quot;帅哥&quot;)&#123;
+    return &quot;你说对了!&quot; 
+&#125;else &#123;
+    retrun &quot;你什么眼神？&quot;
+&#125;
+</code></pre>
+<ul>
+<li>尝试链式调用</li>
+</ul>
+<pre><code>if(me === &quot;帅哥&quot;)&#123;
+    return &quot;你说对了!&quot; 
+&#125;else &#123;
+    if(you === &quot;笨蛋&quot;)&#123;
+    retrun &quot;肯定的&quot;
+    &#125;else &#123;
+    retrun &quot;你什么眼神？&quot;
+    &#125;
+&#125;
+</code></pre>
+<hr>
+<h3 id="连续三元表达式重构"><a href="#连续三元表达式重构" class="headerlink" title="连续三元表达式重构"></a>连续三元表达式重构</h3><hr>
+<p>下面来对一个我日常遇到的 连续三元表达式 进行一下重构</p>
+<h4 id="三元表达式-1"><a href="#三元表达式-1" class="headerlink" title="三元表达式"></a>三元表达式</h4><p><img src="https://liwenkai.netlify.app/_next/image?url=/static/images/ternary-expression.png&w=1920&q=75" alt="image"> </p>
+<h4 id="if-语句-1"><a href="#if-语句-1" class="headerlink" title="if 语句"></a>if 语句</h4><pre><code>if ([&quot;yjs&quot;, &quot;lp&quot;, &quot;rgjs&quot;].includes(obj.bidStatus)) &#123;
+  return &quot;结束时间&quot;;
+&#125; else &#123;
+  if (obj.bidStatus === &quot;wks&quot;) &#123;
+    return &quot;&quot;;
+  &#125; else &#123;
+    return &quot;预计&quot;;
+  &#125;
+&#125;
+
+if ([&quot;jpz&quot;].includes(obj.bidStatus)) &#123;
+  return `$&#123;
+    obj.endDate !== undefined
+      ? obj.endDate.slice(0, obj.endDate.length - 3) || &quot;&quot;
+      : &quot;&quot;
+  &#125;结束`;
+&#125; else &#123;
+  if ([&quot;wks&quot;, &quot;zbz&quot;].includes(obj.bidStatus)) &#123;
+    if (sourceFlag === &quot;litigation-asstts&quot;) &#123;
+      return `预计$&#123;
+        obj.startDate !== undefined
+          ? obj.startDate.slice(0, obj.endDate.length - 3)
+          : &quot;&quot;
+      &#125;开始`;
+    &#125;
+  &#125; else &#123;
+    if ([&quot;yjs&quot;].includes(obj.bidStatus) &amp;&amp; obj.endDate !== undefined) &#123;
+      return obj.endDate;
+    &#125; else &#123;
+      return `$&#123;
+        obj.startDate !== undefined
+          ? obj.startDate.slice(0, obj.endDate.length - 3)
+          : &quot;&quot;
+      &#125;`;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<hr>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">liwenka1</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://liwenka1.github.io/posts/402207985.html">https://liwenka1.github.io/posts/402207985.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">liwenka1</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E4%B8%89%E5%85%83%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                                    <span class="chip bg-color">三元表达式</span>
+                                </a>
+                            
+                                <a href="/tags/if-%E8%AF%AD%E5%8F%A5/">
+                                    <span class="chip bg-color">if 语句</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/402207985.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="三元表达式">
+                        
+                        <span class="card-title">三元表达式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" class="post-category">
+                                    编程规范
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%B8%89%E5%85%83%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                        <span class="chip bg-color">三元表达式</span>
+                    </a>
+                    
+                    <a href="/tags/if-%E8%AF%AD%E5%8F%A5/">
+                        <span class="chip bg-color">if 语句</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/3653758224.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="vue3组件通信">
+                        
+                        <span class="card-title">vue3组件通信</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Vue/" class="post-category">
+                                    Vue
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">
+                        <span class="chip bg-color">组件通信</span>
+                    </a>
+                    
+                    <a href="/tags/vue3/">
+                        <span class="chip bg-color">vue3</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
 </script>
 
-
-    </div>
-</div>
-
-<main class="content">
-
     
 
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/%E6%95%B0%E5%AD%A6/" title="数学: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="数学" style="background-color: #F9EBEA;">数学
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/JavaScript/" title="JavaScript: 5">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="JavaScript" style="background-color: #F5EEF8;">JavaScript
-                        <span class="tag-length">5</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" title="进制转换: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="进制转换" style="background-color: #D5F5E3;">进制转换
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" title="组件通信: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="组件通信" style="background-color: #E8F8F5;">组件通信
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/vue3/" title="vue3: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="vue3" style="background-color: #FEF9E7;">vue3
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%95%B0%E7%BB%84/" title="数组: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="数组" style="background-color: #F8F9F9;">数组
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%8E%BB%E9%87%8D/" title="去重: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="去重" style="background-color: #82E0AA;">去重
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/" title="需求分析: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="需求分析" style="background-color: #D7BDE2;">需求分析
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B/" title="技术选型: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="技术选型" style="background-color: #A3E4D7;">技术选型
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E8%B4%AA%E5%BF%83/" title="贪心: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="贪心" style="background-color: #85C1E9;">贪心
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" title="每日一题: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="每日一题" style="background-color: #F8C471;">每日一题
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E4%BB%8B%E7%BB%8D/" title="介绍: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="介绍" style="background-color: #F9E79F;">介绍
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/map%E5%AF%B9%E8%B1%A1/" title="map对象: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="map对象" style="background-color: #A3E4D7;">map对象
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%9F%A5%E8%AF%A2/" title="查询: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="查询" style="background-color: #E8F8F5;">查询
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="动态规划" style="background-color: #F8C471;">动态规划
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%8E%92%E5%BA%8F/" title="排序: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="排序" style="background-color: #FFF;">排序
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="字符串: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="字符串" style="background-color: #D7BDE2;">字符串
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="面向对象: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="面向对象" style="background-color: #FEF9E7;">面向对象
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/" title="面向过程: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="面向过程" style="background-color: #F9EBEA;">面向过程
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E4%B8%89%E5%85%83%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="三元表达式: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="三元表达式" style="background-color: #A3E4D7;">三元表达式
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/if-%E8%AF%AD%E5%8F%A5/" title="if 语句: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="if 语句" style="background-color: #F8C471;">if 语句
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="数学, 进制转换, 每日一题" data-aos="fade-up">
-                <div class="card">
-                    <a href="/posts/3174520385.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="负二进制转换">
-                            
-                            <span class="card-title">负二进制转换</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-07
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="数学, JavaScript, 进制转换" data-aos="fade-up">
-                <div class="card">
-                    <a href="/posts/2506288334.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Excel表列">
-                            
-                            <span class="card-title">Excel表列</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </article>
 </main>
 
 

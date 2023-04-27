@@ -888,4 +888,108 @@ console.log(POP1, POP2);// [ 1, 2, 3, 4, 5, 6 ] [ 6, 5, 3, 1 ]
         <tag>面向过程</tag>
       </tags>
   </entry>
+  <entry>
+    <title>三元表达式</title>
+    <url>/posts/402207985.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="三元表达式"><a href="#三元表达式" class="headerlink" title="三元表达式"></a>三元表达式</h3><hr>
+<p>什么是三元表达式？</p>
+<ul>
+<li>又叫三元运算符，必须有三个操作数参与的运算</li>
+<li>操作符号：? :</li>
+<li>属于条件判断语句</li>
+</ul>
+<pre><code>例如
+
+me === &quot;帅哥&quot; ? &quot;你说对了!&quot; : &quot;你什么眼神？&quot;
+</code></pre>
+<ul>
+<li>这就是最简单的三元表达式，同时我们可以通过扩展进行连续判断</li>
+</ul>
+<pre><code>例如
+
+me === &quot;帅哥&quot; ? &quot;你说对了!&quot; : you === &quot;笨蛋&quot; ? &quot;肯定的&quot; : &quot;你什么眼神？&quot;
+</code></pre>
+<ul>
+<li>但是如果我们一直链式判断下去是不合理的，会严重影响理解和阅读，对于后期的维护工作可以说是添加了一份耐人寻味的颜色</li>
+<li>因此倘若我们要进行多次的连续判断在这里我依旧推荐大家使用可读性更高的 if 语句</li>
+</ul>
+<hr>
+<h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><hr>
+<p>什么是 if 语句?</p>
+<ul>
+<li>使用 if 语句来规定假如条件为 true 时被执行的 JavaScript 代码块。</li>
+</ul>
+<pre><code>例如
+
+if(me === &quot;帅哥&quot;)&#123;
+    return &quot;你说对了!&quot; 
+&#125;else &#123;
+    retrun &quot;你什么眼神？&quot;
+&#125;
+</code></pre>
+<ul>
+<li>尝试链式调用</li>
+</ul>
+<pre><code>if(me === &quot;帅哥&quot;)&#123;
+    return &quot;你说对了!&quot; 
+&#125;else &#123;
+    if(you === &quot;笨蛋&quot;)&#123;
+    retrun &quot;肯定的&quot;
+    &#125;else &#123;
+    retrun &quot;你什么眼神？&quot;
+    &#125;
+&#125;
+</code></pre>
+<hr>
+<h3 id="连续三元表达式重构"><a href="#连续三元表达式重构" class="headerlink" title="连续三元表达式重构"></a>连续三元表达式重构</h3><hr>
+<p>下面来对一个我日常遇到的 连续三元表达式 进行一下重构</p>
+<h4 id="三元表达式-1"><a href="#三元表达式-1" class="headerlink" title="三元表达式"></a>三元表达式</h4><p><img src="https://liwenkai.netlify.app/_next/image?url=/static/images/ternary-expression.png&w=1920&q=75" alt="image"> </p>
+<h4 id="if-语句-1"><a href="#if-语句-1" class="headerlink" title="if 语句"></a>if 语句</h4><pre><code>if ([&quot;yjs&quot;, &quot;lp&quot;, &quot;rgjs&quot;].includes(obj.bidStatus)) &#123;
+  return &quot;结束时间&quot;;
+&#125; else &#123;
+  if (obj.bidStatus === &quot;wks&quot;) &#123;
+    return &quot;&quot;;
+  &#125; else &#123;
+    return &quot;预计&quot;;
+  &#125;
+&#125;
+
+if ([&quot;jpz&quot;].includes(obj.bidStatus)) &#123;
+  return `$&#123;
+    obj.endDate !== undefined
+      ? obj.endDate.slice(0, obj.endDate.length - 3) || &quot;&quot;
+      : &quot;&quot;
+  &#125;结束`;
+&#125; else &#123;
+  if ([&quot;wks&quot;, &quot;zbz&quot;].includes(obj.bidStatus)) &#123;
+    if (sourceFlag === &quot;litigation-asstts&quot;) &#123;
+      return `预计$&#123;
+        obj.startDate !== undefined
+          ? obj.startDate.slice(0, obj.endDate.length - 3)
+          : &quot;&quot;
+      &#125;开始`;
+    &#125;
+  &#125; else &#123;
+    if ([&quot;yjs&quot;].includes(obj.bidStatus) &amp;&amp; obj.endDate !== undefined) &#123;
+      return obj.endDate;
+    &#125; else &#123;
+      return `$&#123;
+        obj.startDate !== undefined
+          ? obj.startDate.slice(0, obj.endDate.length - 3)
+          : &quot;&quot;
+      &#125;`;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>编程规范</category>
+      </categories>
+      <tags>
+        <tag>三元表达式</tag>
+        <tag>if 语句</tag>
+      </tags>
+  </entry>
 </search>

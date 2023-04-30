@@ -992,4 +992,35 @@ if ([&quot;jpz&quot;].includes(obj.bidStatus)) &#123;
         <tag>if 语句</tag>
       </tags>
   </entry>
+  <entry>
+    <title>四月份学习总结</title>
+    <url>/posts/2291091668.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="四月总结"><a href="#四月总结" class="headerlink" title="四月总结"></a>四月总结</h3><hr>
+<p>对四月份进行简单的总结，预计从 LeetCode 和 GitHub 为重点进行分析。<br>以及对下个月和今后的学习计划进行简单的制定。</p>
+<hr>
+<h3 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h3><p><img src="https://liwenkai.netlify.app/_next/image?url=/static/images/summary/April-2023-LeetCode.png&w=1080&q=75" alt="image"></p>
+<hr>
+<p>到目前为止 LeetCode 一共完成 200 道题目，多为简单题。</p>
+<p>后续目标为工作日每日完成 3 题，休息日每日完成 4 题。</p>
+<p>同时保证尽量每次的周赛都进行参加，以及每天阅读《小灰的算法之旅》，尽量与五月份读完。</p>
+<hr>
+<h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><p><img src="https://liwenkai.netlify.app/_next/image?url=/static/images/summary/April-2023-GitHub.png&w=1080&q=75" alt="image"></p>
+<hr>
+<p>到目前为止 GitHub 并没有达到每日都进行 commit 提交。</p>
+<p>因此，五月份首要任务，每天都进行至少一次的 commit 提交。</p>
+<hr>
+<h4 id="Doublek-UI"><a href="#Doublek-UI" class="headerlink" title="Doublek UI"></a>Doublek UI</h4><hr>
+<p>目前 vue3 组件库 Doublek UI 完成量为 Button 按钮，Icon 图标，Layout 布局。</p>
+<p>进度明显缓慢，五月份预计完成 20 个组件的编写。</p>
+<p>项目链接：<a href="https://doublek-ui.netlify.app/">Doublek UI</a></p>
+<hr>
+]]></content>
+      <categories>
+        <category>月份总结</category>
+      </categories>
+      <tags>
+        <tag>四月</tag>
+        <tag>2023</tag>
+      </tags>
+  </entry>
 </search>

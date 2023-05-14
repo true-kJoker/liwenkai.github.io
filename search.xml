@@ -1023,4 +1023,58 @@ if ([&quot;jpz&quot;].includes(obj.bidStatus)) &#123;
         <tag>2023</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基础算法-双指针</title>
+    <url>/posts/1533673144.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><h3 id="同向双指针-滑动窗口"><a href="#同向双指针-滑动窗口" class="headerlink" title="同向双指针 滑动窗口"></a>同向双指针 滑动窗口</h3><hr>
+<p><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/">209. 长度最小的子数组</a></p>
+<pre><code>/**
+ * @param &#123;number&#125; target
+ * @param &#123;number[]&#125; nums
+ * @return &#123;number&#125;
+ */
+var minSubArrayLen = function (target, nums) &#123;
+    let n = nums.length
+    let left = 0
+    let ans = n + 1
+    let sum = 0
+    for (let right = 0; right &lt; n; right++) &#123;
+        sum += nums[right]
+        while (sum - nums[left] &gt;= target) &#123;
+            sum -= nums[left]
+            left++
+        &#125;
+        if (sum &gt;= target) &#123;
+            ans = Math.min(ans, right - left + 1)
+        &#125;
+    &#125;
+    return ans &lt;= n ? ans : 0
+&#125;;
+
+var minSubArrayLen = function (target, nums) &#123;
+    let n = nums.length
+    let left = 0
+    let ans = n + 1
+    let sum = 0
+    for (let right = 0; right &lt; n; right++) &#123;
+        sum += nums[right]
+        while (sum &gt;= target) &#123;
+            ans = Math.min(ans, right - left + 1)
+            sum -= nums[left]
+            left++
+        &#125;
+    &#125;
+    return ans &lt;= n ? ans : 0
+&#125;;
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
 </search>

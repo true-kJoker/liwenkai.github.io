@@ -4,14 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="四月份学习总结, 自由">
-    <meta name="description" content="四月总结
-对四月份进行简单的总结，预计从 LeetCode 和 GitHub 为重点进行分析。以及对下个月和今后的学习计划进行简单的制定。
-
-LeetCode
-
-到目前为止 LeetCode 一共完成 200 道题目，多为简单题。
-后续目标">
+    <meta name="keywords" content="基础算法-双指针, 自由">
+    <meta name="description" content="双指针同向双指针 滑动窗口
+209. 长度最小的子数组
+/**
+ * @param &amp;#123;number&amp;#125; target
+ * @param &amp;#123;number[]&amp;#125; nums
+ * @return &amp;#123">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +22,7 @@ LeetCode
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>四月份学习总结 | 自由</title>
+    <title>基础算法-双指针 | 自由</title>
     <link rel="icon" type="image/png" href="/medias/international.png">
     
 
@@ -367,12 +366,12 @@ LeetCode
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">四月份学习总结</h1>
+                    <h1 class="description center-align post-title">基础算法-双指针</h1>
                 </div>
             </div>
         </div>
@@ -396,12 +395,12 @@ LeetCode
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%9B%9B%E6%9C%88/">
-                                <span class="chip bg-color">四月</span>
+                            <a href="/tags/%E6%95%B0%E7%BB%84/">
+                                <span class="chip bg-color">数组</span>
                             </a>
                         
-                            <a href="/tags/2023/">
-                                <span class="chip bg-color">2023</span>
+                            <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
+                                <span class="chip bg-color">双指针</span>
                             </a>
                         
                     </div>
@@ -412,8 +411,8 @@ LeetCode
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%9C%88%E4%BB%BD%E6%80%BB%E7%BB%93/" class="post-category">
-                                月份总结
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -425,7 +424,7 @@ LeetCode
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-01
+                    2023-05-13
                 </div>
                 
 
@@ -446,24 +445,47 @@ LeetCode
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="四月总结"><a href="#四月总结" class="headerlink" title="四月总结"></a>四月总结</h3><hr>
-<p>对四月份进行简单的总结，预计从 LeetCode 和 GitHub 为重点进行分析。<br>以及对下个月和今后的学习计划进行简单的制定。</p>
-<hr>
-<h3 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h3><p><img src="https://liwenkai.netlify.app/_next/image?url=/static/images/summary/April-2023-LeetCode.png&w=1080&q=75" alt="image"></p>
-<hr>
-<p>到目前为止 LeetCode 一共完成 200 道题目，多为简单题。</p>
-<p>后续目标为工作日每日完成 3 题，休息日每日完成 4 题。</p>
-<p>同时保证尽量每次的周赛都进行参加，以及每天阅读《小灰的算法之旅》，尽量与五月份读完。</p>
-<hr>
-<h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><p><img src="https://liwenkai.netlify.app/_next/image?url=/static/images/summary/April-2023-GitHub.png&w=1080&q=75" alt="image"></p>
-<hr>
-<p>到目前为止 GitHub 并没有达到每日都进行 commit 提交。</p>
-<p>因此，五月份首要任务，每天都进行至少一次的 commit 提交。</p>
-<hr>
-<h4 id="Doublek-UI"><a href="#Doublek-UI" class="headerlink" title="Doublek UI"></a>Doublek UI</h4><hr>
-<p>目前 vue3 组件库 Doublek UI 完成量为 Button 按钮，Icon 图标，Layout 布局。</p>
-<p>进度明显缓慢，五月份预计完成 20 个组件的编写。</p>
-<p>项目链接：<a target="_blank" rel="noopener" href="https://doublek-ui.netlify.app/">Doublek UI</a></p>
+                <h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><h3 id="同向双指针-滑动窗口"><a href="#同向双指针-滑动窗口" class="headerlink" title="同向双指针 滑动窗口"></a>同向双指针 滑动窗口</h3><hr>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-size-subarray-sum/">209. 长度最小的子数组</a></p>
+<pre><code>/**
+ * @param &#123;number&#125; target
+ * @param &#123;number[]&#125; nums
+ * @return &#123;number&#125;
+ */
+var minSubArrayLen = function (target, nums) &#123;
+    let n = nums.length
+    let left = 0
+    let ans = n + 1
+    let sum = 0
+    for (let right = 0; right &lt; n; right++) &#123;
+        sum += nums[right]
+        while (sum - nums[left] &gt;= target) &#123;
+            sum -= nums[left]
+            left++
+        &#125;
+        if (sum &gt;= target) &#123;
+            ans = Math.min(ans, right - left + 1)
+        &#125;
+    &#125;
+    return ans &lt;= n ? ans : 0
+&#125;;
+
+var minSubArrayLen = function (target, nums) &#123;
+    let n = nums.length
+    let left = 0
+    let ans = n + 1
+    let sum = 0
+    for (let right = 0; right &lt; n; right++) &#123;
+        sum += nums[right]
+        while (sum &gt;= target) &#123;
+            ans = Math.min(ans, right - left + 1)
+            sum -= nums[left]
+            left++
+        &#125;
+    &#125;
+    return ans &lt;= n ? ans : 0
+&#125;;
+</code></pre>
 <hr>
 
                 
@@ -491,7 +513,7 @@ LeetCode
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://liwenka1.github.io/posts/2291091668.html">https://liwenka1.github.io/posts/2291091668.html</a>
+                    <a href="https://liwenka1.github.io/posts/1533673144.html">https://liwenka1.github.io/posts/1533673144.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -529,12 +551,12 @@ LeetCode
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%9B%9B%E6%9C%88/">
-                                    <span class="chip bg-color">四月</span>
+                                <a href="/tags/%E6%95%B0%E7%BB%84/">
+                                    <span class="chip bg-color">数组</span>
                                 </a>
                             
-                                <a href="/tags/2023/">
-                                    <span class="chip bg-color">2023</span>
+                                <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
+                                    <span class="chip bg-color">双指针</span>
                                 </a>
                             
                         </div>
@@ -580,9 +602,10 @@ LeetCode
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/1533673144.html">
                     <div class="card-image">
@@ -600,9 +623,9 @@ LeetCode
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -615,6 +638,7 @@ LeetCode
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -637,13 +661,13 @@ LeetCode
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/402207985.html">
+                <a href="/posts/2291091668.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="三元表达式">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="四月份学习总结">
                         
-                        <span class="card-title">三元表达式</span>
+                        <span class="card-title">四月份学习总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -654,14 +678,14 @@ LeetCode
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" class="post-category">
-                                    编程规范
+                            <a href="/categories/%E6%9C%88%E4%BB%BD%E6%80%BB%E7%BB%93/" class="post-category">
+                                    月份总结
                                 </a>
                             
                             
@@ -671,12 +695,12 @@ LeetCode
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%B8%89%E5%85%83%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-                        <span class="chip bg-color">三元表达式</span>
+                    <a href="/tags/%E5%9B%9B%E6%9C%88/">
+                        <span class="chip bg-color">四月</span>
                     </a>
                     
-                    <a href="/tags/if-%E8%AF%AD%E5%8F%A5/">
-                        <span class="chip bg-color">if 语句</span>
+                    <a href="/tags/2023/">
+                        <span class="chip bg-color">2023</span>
                     </a>
                     
                 </div>
